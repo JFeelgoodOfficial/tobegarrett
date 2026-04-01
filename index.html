@@ -267,12 +267,16 @@
     .nav-links a:hover,
     .nav-links a:focus-visible { color: var(--color-text); }
 
-    .button-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--space-3);
-      align-items: center;
-    }
+    .button-row .button.button-primary span {
+  color: #dba43f !important;
+  background-image: linear-gradient(120deg, #b27c26 0%, #dba43f 50%, #916019 100%) !important;
+  background-size: 220% 100% !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  animation: goldShimmer 4.4s ease-in-out infinite !important;
+  /* layout properties preserved */
+}
 
     .button {
       min-height: 44px;
