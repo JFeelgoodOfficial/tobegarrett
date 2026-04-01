@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Settle In With Tobe Garrett</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #0c0b10;
+      --bg-soft: #14131c;
+      --bg-card: #181824;
+      --accent: #f2c27b;
+      --accent-soft: rgba(242, 194, 123, 0.08);
+      --text-main: #f7f4ef;
+      --text-muted: #b6b3c3;
+      --border-soft: rgba(255, 255, 255, 0.05);
+      --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.65);
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --radius-pill: 999px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #1f1825 0, #05040a 55%);
+      color: var(--text-main);
+      min-height: 100vh;
+      line-height: 1.5;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 24px 16px 64px;
+    }
+
+    /* Top nav — keep simple and quiet */
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 18px;
+      border-radius: var(--radius-pill);
+      background: rgba(8, 7, 12, 0.8);
+      border: 1px solid var(--border-soft);
+      backdrop-filter: blur(18px);
+      box-shadow: var(--shadow-soft);
+      margin-bottom: 28px;
+      position: sticky;
+      top: 16px;
+      z-index: 10;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .nav-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 20%, #f2c27b, #201321);
+      box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.6);
+    }
+
+    .nav-name {
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      font-size: 0.95rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .nav-links a {
+      position: relative;
+      padding-bottom: 2px;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 1px;
+      background: var(--accent);
+      transition: width 0.18s ease-out;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-pill {
+      padding: 8px 14px;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--accent);
+      background: linear-gradient(135deg, #252030, #1a141f);
+      color: var(--accent);
+      font-size: 0.85rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: background 0.15s ease-out, transform 0.1s ease-out,
+        box-shadow 0.1s ease-out;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.55);
+    }
+
+    .btn-pill span.icon {
+      font-size: 1rem;
+    }
+
+    .btn-pill.secondary {
+      border-color: var(--border-soft);
+      color: var(--text-muted);
+      background: rgba(16, 15, 24, 0.9);
+      box-shadow: none;
+    }
+
+    .btn-pill:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7);
+      background: linear-gradient(135deg, #2b2438, #1c151f);
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    /* Hero as coffee-chat */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 28px;
+      padding: 28px;
+      background: radial-gradient(circle at top left, #221729 0, #0b0a0f 55%);
+      border-radius: 24px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .hero-copy {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .hero-tagline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.78rem;
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      color: var(--accent);
+      background: var(--accent-soft);
+      width: fit-content;
+    }
+
+    .hero-title {
+      font-size: clamp(2.1rem, 3vw, 2.6rem);
+      letter-spacing: 0.02em;
+    }
+
+    .hero-title span {
+      color: var(--accent);
+    }
+
+    .hero-subtitle {
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      max-width: 36rem;
+    }
+
+    .hero-confessional {
+      font-size: 0.92rem;
+      color: #d6d1c5;
+      padding: 12px 14px;
+      border-radius: var(--radius-md);
+      background: rgba(10, 9, 13, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.03);
+      position: relative;
+    }
+
+    .hero-confessional::before {
+      content: "You:";
+      position: absolute;
+      top: 10px;
+      left: 14px;
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .hero-confessional p {
+      margin-top: 14px;
+    }
+
+    .hero-reply {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      padding-left: 8px;
+      border-left: 2px solid rgba(242, 194, 123, 0.45);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 4px;
+    }
+
+    .hero-meta {
+      margin-top: 10px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .hero-meta strong {
+      color: var(--accent);
+    }
+
+    /* Right side: 3D placeholder + quiet stack */
+    .hero-right {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .threejs-shell {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-soft);
+      background: radial-gradient(circle at top, #261a30, #07060b);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+      min-height: 220px;
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+    }
+
+    #threejs-canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .threejs-overlay-label {
+      position: absolute;
+      bottom: 14px;
+      right: 16px;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      background: rgba(6, 5, 8, 0.82);
+      padding: 6px 10px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255, 255, 255, 0.03);
+    }
+
+    .quiet-facts {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      font-size: 0.8rem;
+    }
+
+    .quiet-fact {
+      padding: 10px 10px;
+      border-radius: var(--radius-md);
+      background: rgba(10, 9, 13, 0.85);
+      border: 1px solid var(--border-soft);
+      color: var(--text-muted);
+    }
+
+    .quiet-fact strong {
+      display: block;
+      color: var(--accent);
+      margin-bottom: 2px;
+      font-size: 0.83rem;
+    }
+
+    /* Coffee-table sections */
+    .section {
+      padding: 22px 22px 20px;
+      border-radius: 22px;
+      background: rgba(12, 11, 17, 0.96);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: 1.1rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #e7e0d6;
+    }
+
+    .section-kicker {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .section-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 18px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .section-grid-full {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 14px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .section-card {
+      padding: 14px;
+      border-radius: var(--radius-md);
+      background: rgba(15, 14, 21, 0.95);
+      border: 1px solid var(--border-soft);
+    }
+
+    .section-card h3 {
+      font-size: 0.95rem;
+      margin-bottom: 4px;
+      color: #f0e7d9;
+    }
+
+    .section-card p {
+      font-size: 0.88rem;
+    }
+
+    .section-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .section-list-item {
+      padding: 10px 11px;
+      border-radius: var(--radius-md);
+      background: rgba(14, 13, 20, 0.9);
+      border: 1px solid var(--border-soft);
+    }
+
+    .section-list-item strong {
+      display: block;
+      font-size: 0.9rem;
+      margin-bottom: 2px;
+      color: #f0e7d9;
+    }
+
+    .section-caption {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 8px;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .chip {
+      font-size: 0.75rem;
+      padding: 4px 9px;
+      border-radius: var(--radius-pill);
+      background: rgba(242, 194, 123, 0.06);
+      border: 1px solid rgba(242, 194, 123, 0.2);
+      color: var(--accent);
+    }
+
+    .section-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .soft-link {
+      font-size: 0.82rem;
+      color: var(--accent);
+      text-decoration: underline;
+      text-decoration-style: dotted;
+      text-underline-offset: 3px;
+    }
+
+    /* Testimonials as “whispered” notes */
+    .quotes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 10px;
+    }
+
+    .quote {
+      padding: 12px;
+      border-radius: var(--radius-md);
+      background: rgba(12, 11, 17, 0.95);
+      border: 1px solid var(--border-soft);
+      font-size: 0.86rem;
+      color: var(--text-muted);
+    }
+
+    .quote-text {
+      font-style: italic;
+      margin-bottom: 6px;
+    }
+
+    .quote-name {
+      font-size: 0.78rem;
+      color: #e1dccf;
+    }
+
+    .quote-role {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* FAQ strip */
+    .faq-strip {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 18px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .faq-mini {
+      display: grid;
+      gap: 8px;
+    }
+
+    .faq-mini-item {
+      padding: 10px 11px;
+      border-radius: var(--radius-md);
+      background: rgba(10, 9, 13, 0.94);
+      border: 1px solid var(--border-soft);
+    }
+
+    .faq-mini-item strong {
+      display: block;
+      font-size: 0.86rem;
+      margin-bottom: 2px;
+      color: #efe4d6;
+    }
+
+    /* Footer / contact */
+    footer {
+      margin-top: 32px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-top {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: baseline;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .footer-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .footer-meta span {
+      opacity: 0.8;
+    }
+
+    .footer-meta a {
+      font-size: 0.8rem;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      color: var(--accent);
+    }
+
+    @media (max-width: 880px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .hero-right {
+        order: -1;
+      }
+      .section-grid,
+      .faq-strip {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .quotes-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+      .nav-links {
+        display: none;
+      }
+      .hero {
+        padding: 18px;
+      }
+      .section {
+        padding: 18px;
+      }
+      .quotes-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .quiet-facts {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="nav">
+      <div class="nav-left">
+        <div class="nav-avatar" aria-hidden="true"></div>
+        <div class="nav-name">Tobe Garrett</div>
+      </div>
+      <nav class="nav-links">
+        <a href="#books">Books</a>
+        <a href="#about">About</a>
+        <a href="#voices">Voices</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-cta">
+        <a href="https://www.amazon.com/stores/author/B0DYFYB2Y9/allbooks?_encoding=UTF8&ref_=aufs_ap_ahdr_dsk_ab" class="btn-pill">
+          <span class="icon">☕</span>
+          <span>Browse 55+ titles</span>
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO: quiet coffee shop confessional -->
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <div class="hero-tagline">
+            <span>Late-night questions. Lived-in answers.</span>
+          </div>
+          <h1 id="hero-title" class="hero-title">
+            Pull up a chair. <span>Tell me what's on your mind.</span>
+          </h1>
+          <p class="hero-subtitle">
+            I'm Tobe Garrett, an independent author from Austin with 55+ books across science fiction, historical fiction, fantasy, adventure, and how-to guides — all written to sit across the table from you, not above you.
+          </p>
+
+          <div class="hero-confessional">
+            <p>
+              “Some days it feels like the world is too loud, history is too big,
+              and my own story is getting lost in the middle of it all.”
+            </p>
+          </div>
+
+          <div class="hero-reply">
+            Think of my books as quiet conversations — history whispering in the
+            first person, wild hogs telling the truth about survival, time
+            itself confessing what it’s seen. I’m not a guru. Just a dad who’s
+            been around a while and writes down what the world teaches.
+          </div>
+
+          <div class="hero-actions">
+            <a href="https://www.amazon.com/stores/author/B0DYFYB2Y9/allbooks?_encoding=UTF8&ref_=aufs_ap_ahdr_dsk_ab" class="btn-pill">
+              <span class="icon">📚</span>
+              <span>Start with Tobe on Amazon</span>
+            </a>
+            <a href="https://www.amazon.com/stores/Tobias-Garrett/author/B07X6NLYTZ/allbooks?ccs_id=0a32b85b-0c56-464e-be46-b60ed6ef5c16" class="btn-pill secondary">
+              <span>Explore Tobias (historical)</span>
+            </a>
+          </div>
+
+          <div class="hero-meta">
+            55+ original titles across science fiction, historical fiction, fantasy, adventure, and how-to guides — available in paperback and e-book on Amazon.
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <!-- Three.js container -->
+          <div class="threejs-shell" aria-hidden="true">
+            <canvas id="threejs-canvas"></canvas>
+            <div class="threejs-overlay-label">
+              A quiet corner: lamp, table, open book.
+            </div>
+          </div>
+          <div class="quiet-facts">
+            <div class="quiet-fact">
+              <strong>History has never told its story like this before.</strong>
+              Discover books where places, people, and ideas become the narrator.
+            </div>
+            <div class="quiet-fact">
+              <strong>Two names, one writer.</strong>
+              Most titles sit under Tobe. For the deeper historical fiction, follow Tobias.
+            </div>
+            <div class="quiet-fact">
+              <strong>Read how you like.</strong>
+              All 55+ titles available in paperback and e-book on Amazon.
+            </div>
+            <div class="quiet-fact">
+              <strong>Not just books — experiences.</strong>
+              Each title is written from a unique perspective, turning history, knowledge, and storytelling into something unforgettable.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BOOKS / GENRES -->
+      <section id="books" class="section" aria-labelledby="books-title">
+        <div class="section-header">
+          <h2 id="books-title" class="section-title">Choose Your Next Conversation</h2>
+          <p class="section-kicker">
+            Science fiction, historical fiction, fantasy, adventure, how-to, and the “I Am” series.
+          </p>
+        </div>
+
+        <div class="section-grid">
+          <div class="section-card">
+            <h3>Explore the full catalog</h3>
+            <p>
+              55 titles across multiple genres. Science fiction, historical fiction, fantasy,
+              adventure, and practical how-to guides — all available in paperback and e-book formats on Amazon.
+              Most titles will be found under Tobe, but if you are looking for the historical
+              titles please use the link for Tobias. All of these titles are my original content.
+            </p>
+
+            <div class="chips">
+              <span class="chip">Science fiction</span>
+              <span class="chip">Historical fiction</span>
+              <span class="chip">Fantasy</span>
+              <span class="chip">Adventure</span>
+              <span class="chip">How-to guides</span>
+              <span class="chip">“I Am” series</span>
+            </div>
+
+            <div class="section-cta-row">
+              <a href="https://www.amazon.com/stores/Tobe-Garrett/author/B0DYFYB2Y9?ref=ap_rdr&shoppingPortalEnabled=true&ccs_id=36385333-db47-4c3c-b134-47abcd089765" class="btn-pill">
+                <span>Browse Tobe on Amazon</span>
+              </a>
+              <a href="https://www.amazon.com/stores/Tobias-Garrett/author/B07X6NLYTZ/allbooks?ccs_id=0a32b85b-0c56-464e-be46-b60ed6ef5c16" class="btn-pill secondary">
+                <span>Browse Tobias (historical)</span>
+              </a>
+            </div>
+
+            <p class="section-caption">
+              Explore 55 titles across every genre. From sci-fi to adventure to how-to guides, find your next favorite book. Available in paperback and e-book on Amazon.
+            </p>
+          </div>
+
+          <div class="section-list">
+            <div class="section-list-item">
+              <strong>Immersive worlds</strong>
+              Science fiction, fantasy, and adventure stories that transport you to new places and possibilities. Each title available in paperback and e-book.
+            </div>
+            <div class="section-list-item">
+              <strong>Real stories and guides</strong>
+              Historical fiction grounded in real events plus practical how-to books. Learn something new or discover stories rooted in fact.
+            </div>
+            <div class="section-list-item">
+              <strong>Easy access formats</strong>
+              Choose paperback or e-book. All titles are ready to read today — instant download or quick delivery.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- I AM SERIES AS COZY TABLE -->
+      <section class="section" aria-labelledby="iam-title">
+        <div class="section-header">
+          <h2 id="iam-title" class="section-title">The “I Am” Series</h2>
+          <p class="section-kicker">
+            What if history, creatures, and even gold leaned in and spoke first?
+          </p>
+        </div>
+
+        <div class="section-grid">
+          <div class="section-card">
+            <h3>History, but whispered in your ear</h3>
+            <p>
+              What if historic people and places could speak? The “I Am” Series gives voice
+              to the cities, states, places, and people that shape our world. Each book is written
+              from a first-person perspective, turning history into a personal, engaging, and unforgettable experience.
+            </p>
+            <p class="section-caption">
+              Start exploring the stories behind the histories you thought you knew.
+            </p>
+            <a href="https://www.amazon.com/dp/B0DYF7VZ37?binding=kindle_edition&ref_=ast_author_bsi" class="soft-link">
+              Explore the “I Am” stories on Amazon →
+            </a>
+          </div>
+
+          <div class="section-list">
+            <div class="section-list-item">
+              <strong>I Am the United States Army</strong>
+              Discipline. Sacrifice. Brotherhood. Step inside the voice of those who serve — experience the strength, honor, and legacy that define an Army.
+            </div>
+            <div class="section-list-item">
+              <strong>I Am a Wild Hog</strong>
+              Raw instinct. Untamed survival. Live the wild through the eyes of one of nature’s toughest survivors — this is life with no rules.
+            </div>
+            <div class="section-list-item">
+              <strong>I Am a Time Traveler</strong>
+              Past. Present. Future. All at once. What if time wasn’t something you followed — but something you controlled?
+            </div>
+            <div class="section-list-item">
+              <strong>I Am Gold</strong>
+              Desired for centuries. Fought over endlessly. Experience the story of power, wealth, and obsession — told by the element that shaped empires.
+            </div>
+            <div class="section-list-item">
+              <strong>I Am Caesar</strong>
+              “I came. I saw. I conquered… but at what cost?” Step inside the mind of history’s most powerful ruler — and witness ambition, betrayal, and empire from within.
+            </div>
+            <div class="section-list-item">
+              <strong>I Am the Great Wall of China</strong>
+              “I have stood for centuries… and I have seen everything.” Walk through history from the perspective of one of the world’s greatest wonders.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT AS ONE-ON-ONE -->
+      <section id="about" class="section" aria-labelledby="about-title">
+        <div class="section-header">
+          <h2 id="about-title" class="section-title">Meet Tobe</h2>
+          <p class="section-kicker">
+            Independent author and bookseller, writing like a friend across the table.
+          </p>
+        </div>
+
+        <div class="section-grid">
+          <div class="section-card">
+            <h3>I'm Tobe Garrett, independent author and book seller</h3>
+            <p>
+              An independent author based in Austin, Texas, I’ve published 55+ titles across science fiction,
+              historical fiction, fantasy, adventure, and how-to guides — available in paperback and e-book on Amazon.
+              Every book reflects my commitment to storytelling and practical knowledge that connects with readers.
+            </p>
+            <p>
+              I write across genres with depth and purpose. Each book reflects careful research, thoughtful storytelling,
+              and a simple goal: to leave you with something you didn’t have when you opened the cover — a new idea,
+              a new angle on history, or a practical way forward.
+            </p>
+            <a href="https://www.amazon.com/stores/author/B0DYFYB2Y9/allbooks?_encoding=UTF8&ref_=aufs_ap_ahdr_dsk_ab" class="soft-link">
+              Browse the books on Amazon →
+            </a>
+          </div>
+
+          <div class="section-card">
+            <h3>How the books come to life</h3>
+            <p>
+              Every title in my catalog goes through careful research, thoughtful drafting, and thorough editing
+              to deliver quality stories and guides.
+            </p>
+            <p>
+              <strong>Research &amp; Planning:</strong> I dig deep into each topic or world, gathering details and outlining
+              structure before the first draft begins.
+            </p>
+            <p>
+              <strong>Drafting &amp; Revising:</strong> Multiple rounds of writing and refinement shape the manuscript,
+              ensuring pacing, clarity, and emotional depth throughout the narrative.
+            </p>
+            <p class="section-caption">
+              Fifty-five and perhaps even more published titles available now on Amazon in paperback and e-book.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- READER VOICES AS WHISPERED REVIEWS -->
+      <section id="voices" class="section" aria-labelledby="voices-title">
+        <div class="section-header">
+          <h2 id="voices-title" class="section-title">What Readers Say Over Coffee</h2>
+          <p class="section-kicker">
+            Quiet notes from science fiction fans, fantasy readers, and how-to learners.
+          </p>
+        </div>
+
+        <div class="section-grid-full">
+          <p>
+            Readers across multiple genres keep coming back to this diverse collection of science fiction, fantasy,
+            adventure, historical fiction, and how-to titles. Below are a few of their words — shared like notes
+            left on a café table after a good conversation.
+          </p>
+
+          <div class="quotes-grid">
+            <div class="quote">
+              <div class="quote-text">
+                “Tobe Garrett's science fiction novel completely captivated me from page one. The world-building is intricate, and the characters felt so real I couldn't put it down.”
+              </div>
+              <div class="quote-name">Jennifer Chen</div>
+              <div class="quote-role">Science Fiction Reader</div>
+            </div>
+
+            <div class="quote">
+              <div class="quote-text">
+                “I've purchased several of Tobe Garrett's fantasy titles, and each one delivers imaginative storytelling with compelling plot twists. Highly recommend for fantasy enthusiasts.”
+              </div>
+              <div class="quote-name">Tim Huy</div>
+              <div class="quote-role">Fantasy Book Club Member</div>
+            </div>
+
+            <div class="quote">
+              <div class="quote-text">
+                “The how-to guides are practical, well-organized, and actually easy to follow. Tobe Garrett knows how to teach through writing. Great value for the price.”
+              </div>
+              <div class="quote-name">Lisa Fuller</div>
+              <div class="quote-role">How-To Reader</div>
+            </div>
+
+            <div class="quote">
+              <div class="quote-text">
+                “Found Tobe Garrett's adventure series by chance on Amazon and couldn't stop reading. The pace is perfect, and every chapter left me wanting more.”
+              </div>
+              <div class="quote-name">David Okafor</div>
+              <div class="quote-role">Adventure Genre Fan</div>
+            </div>
+
+            <div class="quote">
+              <div class="quote-text">
+                “The historical fiction writing is meticulous and engaging. Tobe Garrett brings real periods to life with authentic detail and memorable characters I won't forget.”
+              </div>
+              <div class="quote-name">Rebecca Walsh</div>
+              <div class="quote-role">Historical Fiction Reader</div>
+            </div>
+
+            <div class="quote">
+              <div class="quote-text">
+                “Both the paperback and e-book formats are excellent. Tobe Garrett's diverse catalog means there's genuinely something for every reader. Worth exploring.”
+              </div>
+              <div class="quote-name">Alex Martinez</div>
+              <div class="quote-role">Multi-Genre Reader</div>
+            </div>
+
+            <div class="quote">
+              <div class="quote-text">
+                “Tobe's science fiction novels grip you from the first page. The world-building is intricate, and the characters feel real. I've recommended his work to everyone in my book club.”
+              </div>
+              <div class="quote-name">James Tran</div>
+              <div class="quote-role">Reader and Science Fiction Enthusiast</div>
+            </div>
+
+            <div class="quote">
+              <div class="quote-text">
+                “As a fellow author, I'm impressed by Tobe's versatility across genres. His dedication to quality writing in both fiction and instructional works shows real commitment to readers.”
+              </div>
+              <div class="quote-name">Rebecca Gurung</div>
+              <div class="quote-role">Independent Author, Historical Fiction</div>
+            </div>
+
+            <div class="quote">
+              <div class="quote-text">
+                “I picked up one of Tobe's how-to guides and found it practical, clear, and genuinely helpful. Not many writers can handle both fiction and nonfiction with this level of skill.”
+              </div>
+              <div class="quote-name">David Jones</div>
+              <div class="quote-role">Reader and Small Business Owner</div>
+            </div>
+          </div>
+
+          <p class="section-caption">
+            More reviews are shared on Amazon, Instagram, and Facebook, where readers discuss the 55-book catalog,
+            share favorite titles, and swap recommendations.
+          </p>
+
+          <div class="section-cta-row">
+            <a href="https://www.amazon.com/stores/author/B0DYFYB2Y9/allbooks?_encoding=UTF8&ref_=aufs_ap_ahdr_dsk_ab" class="btn-pill">
+              <span>Start your next story on Amazon</span>
+            </a>
+            <a href="https://www.amazon.com/stores/Tobias-Garrett/author/B07X6NLYTZ?ref=sr_ntt_srch_lnk_2&qid=1774742579&sr=1-2&shoppingPortalEnabled=true&ccs_id=13ab1e92-ebd9-49fe-aff1-6841b884440a" class="btn-pill secondary">
+              <span>Shop Tobias Garrett books</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ / PRACTICAL STRIP -->
+      <section class="section" aria-labelledby="faq-title">
+        <div class="section-header">
+          <h2 id="faq-title" class="section-title">A Few Practical Questions</h2>
+          <p class="section-kicker">
+            Formats, genres, and how to reach out.
+          </p>
+        </div>
+
+        <div class="faq-strip">
+          <div class="section-card">
+            <h3>Frequently asked questions</h3>
+            <p>
+              Have a question about purchasing, formats, genres, or content?
+              Most of it comes down to this: all titles are available on Amazon,
+              in both paperback and e-book, across multiple genres. If you can’t find what you need,
+              you can always reach me directly.
+            </p>
+            <p class="section-caption">
+              Can't find what you need? Reach out to me at
+              <a class="soft-link" href="mailto:Tobephoto@gmail.com">tobephoto@gmail.com</a>.
+            </p>
+          </div>
+
+          <div class="faq-mini">
+            <div class="faq-mini-item">
+              <strong>Where can I buy the books?</strong>
+              All titles are available on Amazon — just search for Tobe Garrett or Tobias Garrett, or use the links on this page.
+            </div>
+            <div class="faq-mini-item">
+              <strong>What genres do you write in?</strong>
+              Science fiction, historical fiction, fantasy, adventure, informative and how-to guides, plus the first-person “I Am” series.
+            </div>
+            <div class="faq-mini-item">
+              <strong>Paperback or e-book?</strong>
+              Both. Read how you want — physical pages or instant digital access.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT: COFFEE-SHOP INVITE -->
+      <section id="contact" class="section" aria-labelledby="contact-title">
+        <div class="section-header">
+          <h2 id="contact-title" class="section-title">Send a Note</h2>
+          <p class="section-kicker">
+            Questions, collaboration ideas, or just something on your mind.
+          </p>
+        </div>
+
+        <div class="section-grid">
+          <div class="section-card">
+            <h3>Reach Tobe directly</h3>
+            <p>
+              Email me to discuss your favorite titles, ask about new releases, or explore collaboration opportunities.
+              I respond to all inquiries and welcome reader feedback — think of it as sliding a note across the table
+              at the end of a long conversation.
+            </p>
+            <p>
+              <a href="mailto:Tobephoto@gmail.com" class="soft-link">Tobephoto@gmail.com</a><br />
+              Austin, Texas
+            </p>
+            <p class="section-caption">
+              Privacy &amp; trust: when you contact me, your email and message are used only to respond to your inquiry.
+              I don't share your information with third parties and keep all contact details secure and confidential.
+            </p>
+          </div>
+
+          <div class="section-card">
+            <h3>Quick note</h3>
+            <form action="https://tobegarrett.com/contact" method="post">
+              <div style="display:flex; flex-direction:column; gap:10px;">
+                <label>
+                  <span style="font-size:0.8rem; color:#e0d8cb;">Name</span><br />
+                  <input type="text" name="name" style="width:100%; padding:8px 9px; border-radius:8px; border:1px solid var(--border-soft); background:#0d0c12; color:var(--text-main);" />
+                </label>
+                <label>
+                  <span style="font-size:0.8rem; color:#e0d8cb;">Email</span><br />
+                  <input type="email" name="email" style="width:100%; padding:8px 9px; border-radius:8px; border:1px solid var(--border-soft); background:#0d0c12; color:var(--text-main);" />
+                </label>
+                <label>
+                  <span style="font-size:0.8rem; color:#e0d8cb;">Message</span><br />
+                  <textarea name="message" rows="4" style="width:100%; padding:8px 9px; border-radius:8px; border:1px solid var(--border-soft); background:#0d0c12; color:var(--text-main);"></textarea>
+                </label>
+                <button type="submit" class="btn-pill">
+                  <span>Send message</span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-top">
+        <div class="footer-links">
+          <a href="#books">Books</a>
+          <a href="#about">About</a>
+          <a href="#voices">Voices</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-meta">
+          <span>© 2026 Tobe Garrett. All rights reserved.</span>
+          <a href="https://tobegarrett.com/#privacy-policy">Privacy Policy</a>
+          <a href="https://tobegarrett.com/contact">Terms of Service</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Three.js loader hook (optional) -->
+  <!--
+  <script src="https://unpkg.com/three@0.161.0/build/three.min.js"></script>
+  <script>
+    // Init Three.js here, e.g. a slow-rotating mug + book under a warm point light
+    const canvas = document.getElementById('threejs-canvas');
+    // your three.js scene setup...
+  </script>
+  -->
+</body>
+</html>
