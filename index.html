@@ -42,10 +42,10 @@
       --font-body: 'Satoshi', Inter, sans-serif;
       --content-default: 76rem;
       --content-wide: 88rem;
-      --color-bg: #f0e6d8;
-      --color-surface: #dfd0bd;
-      --color-surface-2: #cebda6;
-      --color-surface-offset: #c2b09a;
+      --color-bg: #f5ecdd;
+      --color-surface: #e4d3b5;
+      --color-surface-2: #d7c29c;
+      --color-surface-offset: #c9b28c;
       --color-border: rgba(246, 232, 214, 0.12);
       --color-divider: rgba(246, 232, 214, 0.08);
       --color-text: #231814;
@@ -96,7 +96,7 @@
       background:
         linear-gradient(180deg, rgba(20,14,10,0.16), rgba(6,4,3,0.34)),
         radial-gradient(circle at top, rgba(255, 226, 188, 0.05), transparent 30%);
-      backdrop-filter: blur(1.2px);
+      backdrop-filter: none;
     }
 
     a, button, input, textarea {
@@ -110,7 +110,7 @@
     .skip-link {
       position: absolute;
       left: -999px;
-      top: var(--space-4);
+      top: 0;
       background: #fff;
       color: #000;
       padding: var(--space-3) var(--space-4);
@@ -129,13 +129,13 @@
     .ambient-room .glow {
       position: absolute;
       border-radius: 50%;
-      filter: blur(50px);
+      filter: none;
       opacity: 0.28;
       animation: driftGlow 16s ease-in-out infinite;
     }
-    .glow-1 { width: 22rem; height: 22rem; top: 6%; left: 4%; background: rgba(226, 198, 160, 0.32); }
-    .glow-2 { width: 16rem; height: 16rem; top: 12%; right: 8%; background: rgba(238, 215, 181, 0.34); animation-delay: -4s; }
-    .glow-3 { width: 20rem; height: 20rem; bottom: 10%; left: 20%; background: rgba(207, 176, 140, 0.28); animation-delay: -8s; }
+    .glow-1 { width: 22rem; height: 22rem; top: 6%; left: 4%; background: rgba(239, 214, 177, 0.42); }
+    .glow-2 { width: 16rem; height: 16rem; top: 12%; right: 8%; background: rgba(249, 226, 191, 0.46); animation-delay: -4s; }
+    .glow-3 { width: 20rem; height: 20rem; bottom: 10%; left: 20%; background: rgba(224, 193, 154, 0.4); animation-delay: -8s; }
 
     .wall-art, .booth-shadow, .table-haze {
       position: absolute;
@@ -147,14 +147,22 @@
       height: 11rem;
       top: 16%;
       right: 7%;
-      border: 1px solid rgba(193, 167, 132, 0.3);
+      border: 1px solid rgba(181, 150, 113, 0.45);
       border-radius: var(--radius-lg);
       background:
-        linear-gradient(145deg, rgba(219, 188, 145, 0.76), rgba(240, 223, 200, 0.9)),
-        radial-gradient(circle at 25% 30%, rgba(255, 243, 222, 0.8), transparent 40%),
-        radial-gradient(circle at 66% 64%, rgba(212, 179, 133, 0.7), transparent 32%);
-      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.28), 0 18px 60px rgba(0,0,0,0.16);
-      transform: rotate(-2deg);
+        linear-gradient(180deg,
+          #f2dfc0 0%,
+          #e1c394 14%,
+          #c4834a 18%,
+          #e8d0a4 30%,
+          #f3e2c2 46%,
+          #e1c394 60%,
+          #b86c3b 64%,
+          #e7cfaa 80%,
+          #f5e7cd 100%
+        );
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.3), 0 18px 60px rgba(0,0,0,0.18);
+      transform: rotate(-1.5deg);
     }
     .booth-shadow {
       left: -5%;
@@ -163,7 +171,7 @@
       height: 15rem;
       border-radius: 50%;
       background: radial-gradient(circle at center, rgba(181, 153, 118, 0.5), transparent 70%);
-      filter: blur(22px);
+      filter: none;
     }
     .table-haze {
       right: 10%;
@@ -172,7 +180,7 @@
       height: 10rem;
       border-radius: 50%;
       background: radial-gradient(circle at center, rgba(199, 170, 132, 0.42), transparent 70%);
-      filter: blur(18px);
+      filter: none;
     }
     .window-light {
       position: absolute;
@@ -186,7 +194,7 @@
         linear-gradient(180deg, rgba(255,255,255,0.14) 0 3px, transparent 3px 48%),
         linear-gradient(135deg, rgba(255, 239, 214, 0.22), rgba(255, 208, 149, 0.04));
       border-radius: 1rem;
-      filter: blur(10px);
+      filter: none;
       transform: perspective(900px) rotateY(18deg) rotateX(3deg);
       box-shadow: 0 0 120px rgba(255, 212, 158, 0.12);
     }
@@ -199,8 +207,8 @@
     }
 
     .masthead {
-      position: sticky;
-      top: var(--space-4);
+      position: relative;
+      top: 0;
       z-index: 50;
       display: flex;
       align-items: center;
@@ -211,7 +219,7 @@
       border: 1px solid var(--color-border);
       border-radius: var(--radius-full);
       background: rgba(27, 21, 17, 0.58);
-      backdrop-filter: blur(18px);
+      backdrop-filter: none;
       box-shadow: var(--shadow-sm);
     }
 
@@ -248,7 +256,7 @@
       flex-wrap: wrap;
     }
 
-    .nav-links a {
+    .nav-links a, .button.button-primary span {
       min-height: 44px;
       display: inline-flex;
       align-items: center;
@@ -302,47 +310,18 @@
     }
 
     .section {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      overflow-y: auto;
-      -webkit-overflow-scrolling: touch;
+      position: relative;
+      margin-bottom: clamp(var(--space-8), 4vw, var(--space-12));
       padding: clamp(var(--space-6), 3.4vw, var(--space-12));
       border-radius: var(--radius-xl);
       border: 1px solid var(--color-border);
       background:
-        linear-gradient(180deg, rgba(56, 42, 34, 0.62), rgba(24, 19, 16, 0.7)),
-        rgba(27, 21, 17, 0.56);
-      backdrop-filter: blur(14px);
-      box-shadow: var(--shadow-lg);
-      transform: translate3d(120%, 0, 0) scale(0.96);
-      opacity: 0;
-      pointer-events: none;
-      overflow-x: hidden;
+        linear-gradient(180deg, rgba(244, 231, 208, 0.96), rgba(230, 209, 177, 0.96)),
+        rgba(255, 255, 255, 0.7);
+      backdrop-filter: none;
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
       isolation: isolate;
-      transition: transform 700ms cubic-bezier(0.16,1,0.3,1), opacity 520ms cubic-bezier(0.16,1,0.3,1);
-    }
-
-    .section.is-active {
-      transform: translate3d(0, 0, 0) scale(1);
-      opacity: 1;
-      pointer-events: auto;
-      z-index: 3;
-    }
-
-    .section.is-prev {
-      transform: translate3d(-22%, 0, 0) scale(0.965);
-      opacity: 0.18;
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    .section.is-next {
-      transform: translate3d(22%, 0, 0) scale(0.965);
-      opacity: 0.18;
-      pointer-events: none;
-      z-index: 1;
     }
 
     .section::before {
@@ -364,7 +343,7 @@
       height: 5rem;
       border-radius: 50%;
       background: radial-gradient(circle at center, rgba(0,0,0,0.32), transparent 70%);
-      filter: blur(10px);
+      filter: none;
       opacity: 0.44;
       pointer-events: none;
       z-index: -2;
@@ -437,7 +416,7 @@
     }
 
     .reply {
-      margin-top: var(--space-4);
+      margin-top: 0;
       padding-left: var(--space-5);
       border-left: 1px solid rgba(210,165,109,0.35);
       color: var(--color-text-muted);
@@ -476,7 +455,7 @@
       border-radius: var(--radius-full);
       background: rgba(15, 11, 9, 0.5);
       border: 1px solid rgba(246, 232, 214, 0.08);
-      backdrop-filter: blur(10px);
+      backdrop-filter: none;
     }
 
     .fact-grid,
@@ -551,7 +530,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: var(--space-2);
-      margin-top: var(--space-4);
+      margin-top: 0;
     }
 
     .chip {
@@ -649,13 +628,11 @@
     .muted-link { color: var(--color-primary); }
 
     [data-reveal] {
-      opacity: 0;
-      transform: translateY(24px) scale(0.992);
-      transition: opacity 800ms cubic-bezier(0.16,1,0.3,1), transform 800ms cubic-bezier(0.16,1,0.3,1);
+      transform: translateY(12px);
+      transition: transform 600ms cubic-bezier(0.16,1,0.3,1);
     }
     [data-reveal].is-visible {
-      opacity: 1;
-      transform: translateY(0) scale(1);
+      transform: translateY(0);
     }
 
     @keyframes floatSection {
@@ -700,8 +677,7 @@
     .shimmer-primary,
     .eyebrow,
     .chip,
-    .button.button-primary span,
-    .muted-link,
+        .muted-link,
     .confessional .label,
     .reply .label {
       color: var(--color-primary);
@@ -720,7 +696,23 @@
       100% { background-position: 0% 50%; }
     }
 
-    @media (prefers-reduced-motion: reduce) {
+        .nav-links a, .button.button-primary span {
+      position: relative;
+      background-image: linear-gradient(120deg, rgba(178, 124, 38, 0.1), rgba(219, 164, 63, 0.95), rgba(145, 96, 25, 0.9));
+      background-size: 220% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: goldShimmer 4.4s ease-in-out infinite;
+    }
+
+    @keyframes goldShimmer {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+@media (prefers-reduced-motion: reduce) {
       *, *::before, *::after {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
@@ -753,8 +745,8 @@
 <path d="M35 12C35 12 34 8 37 5" stroke="currentColor" stroke-linecap="round" stroke-width="2.5"></path>
 </svg>
 <span class="brand-text">
-<strong id="brandTitle" class="shimmer-primary">TOBE GARRETT</strong>
-<span id="brandSubtitle" class="shimmer-primary">Stories that pull people in</span>
+<strong class="shimmer-primary" id="brandTitle">TOBE GARRETT</strong>
+<span class="shimmer-primary" id="brandSubtitle">Stories that pull people in</span>
 </span>
 </a>
 <nav class="nav-links">
@@ -765,11 +757,9 @@
 </nav>
 <div class="button-row">
 <a class="button button-primary" href="https://www.amazon.com/stores/author/B0DYFYB2Y9/allbooks?_encoding=UTF8&amp;ref_=aufs_ap_ahdr_dsk_ab" rel="noopener noreferrer" target="_blank">Browse Tobe on Amazon</a>
-<a class="button" href="https://www.amazon.com/stores/Tobias-Garrett/author/B07X6NLYTZ/allbooks?ccs_id=0a32b85b-0c56-464e-be46-b60ed6ef5c16" rel="noopener noreferrer" target="_blank">Browse Tobias titles</a>
 </div>
 </header>
 <main id="main-content">
-<div class="deck">
 <section class="section hero float-card delay-1" data-reveal="">
 <div>
 <div class="eyebrow">You are in the right place if books still matter to you</div>
@@ -835,7 +825,6 @@
 </div>
 <div class="button-row" style="margin-top: var(--space-6);">
 <a class="button button-primary" href="https://www.amazon.com/stores/Tobe-Garrett/author/B0DYFYB2Y9?ref=ap_rdr&amp;shoppingPortalEnabled=true&amp;ccs_id=36385333-db47-4c3c-b134-47abcd089765" rel="noopener noreferrer" target="_blank">Browse Tobe books</a>
-<a class="button" href="https://www.amazon.com/stores/Tobias-Garrett/author/B07X6NLYTZ/allbooks?ccs_id=0a32b85b-0c56-464e-be46-b60ed6ef5c16" rel="noopener noreferrer" target="_blank">Browse Tobias books</a>
 </div>
 </article>
 <div class="genre-grid">
@@ -995,11 +984,7 @@
 </article>
 </div>
 </section>
-</div></main>
-<div class="button-row" style="justify-content: center; margin-top: var(--space-8);">
-<button class="button" id="prevSection" type="button">← Previous</button>
-<button class="button button-primary" id="nextSection" type="button">Next →</button>
-</div>
+</main>
 <footer>
 <span>© 2026 Tobe Garrett. All rights reserved.</span>
 <span>
@@ -1052,7 +1037,7 @@
 
       const floor = new THREE.Mesh(
         new THREE.PlaneGeometry(11, 11),
-        new THREE.MeshStandardMaterial({ color: 0xd9c4aa, roughness: 0.9 })
+        new THREE.MeshStandardMaterial({ color: 0xe7d3b2, roughness: 0.9 })
       );
       floor.rotation.x = -Math.PI / 2;
       floor.position.y = -1.45;
@@ -1060,14 +1045,14 @@
 
       const wall = new THREE.Mesh(
         new THREE.PlaneGeometry(10, 6),
-        new THREE.MeshStandardMaterial({ color: 0xe3d2be, roughness: 0.96, side: THREE.DoubleSide })
+        new THREE.MeshStandardMaterial({ color: 0xf0e0c9, roughness: 0.96, side: THREE.DoubleSide })
       );
       wall.position.set(0, 1.2, -3.2);
       group.add(wall);
 
       const windowFrame = new THREE.Mesh(
         new THREE.BoxGeometry(2.5, 2.8, 0.06),
-        new THREE.MeshStandardMaterial({ color: 0xcab599, roughness: 0.9 })
+        new THREE.MeshStandardMaterial({ color: 0xe0caa5, roughness: 0.9 })
       );
       windowFrame.position.set(-2.2, 1.5, -3.05);
       group.add(windowFrame);
@@ -1090,7 +1075,7 @@
 
       const bookCover = new THREE.Mesh(
         new THREE.BoxGeometry(2.7, 0.18, 2.05),
-        new THREE.MeshStandardMaterial({ color: 0xd1b596, roughness: 0.84 })
+        new THREE.MeshStandardMaterial({ color: 0xe2c7a4, roughness: 0.84 })
       );
       bookCover.position.set(1.3, -1.0, -0.15);
       bookCover.rotation.y = -0.42;
@@ -1188,61 +1173,7 @@
         }, 2600);
       }
 
-      const deck = document.querySelector('.deck');
-      const sections = deck ? Array.from(deck.querySelectorAll('.section')) : [];
-      const prevButton = document.getElementById('prevSection');
-      const nextButton = document.getElementById('nextSection');
-      let activeIndex = 0;
-
-      const updateDeck = () => {
-        sections.forEach((section, index) => {
-          section.classList.remove('is-active', 'is-prev', 'is-next');
-          if (index === activeIndex) {
-            section.classList.add('is-active');
-            section.scrollTo({ top: 0, behavior: 'smooth' });
-          } else if (index < activeIndex) {
-            section.classList.add('is-prev');
-          } else {
-            section.classList.add('is-next');
-          }
-        });
-        if (prevButton) prevButton.disabled = activeIndex === 0;
-        if (nextButton) nextButton.disabled = activeIndex === sections.length - 1;
-      };
-
-      const goTo = (index) => {
-        if (!sections.length) return;
-        activeIndex = Math.max(0, Math.min(sections.length - 1, index));
-        updateDeck();
-      };
-
-      if (prevButton) prevButton.addEventListener('click', () => goTo(activeIndex - 1));
-      if (nextButton) nextButton.addEventListener('click', () => goTo(activeIndex + 1));
-
-      if (deck) {
-        let touchStartX = 0;
-        let touchStartY = 0;
-        deck.addEventListener('touchstart', (event) => {
-          const touch = event.changedTouches[0];
-          touchStartX = touch.clientX;
-          touchStartY = touch.clientY;
-        }, { passive: true });
-
-        deck.addEventListener('touchend', (event) => {
-          const touch = event.changedTouches[0];
-          const dx = touch.clientX - touchStartX;
-          const dy = touch.clientY - touchStartY;
-          if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.2) {
-            if (dx < 0) goTo(activeIndex + 1);
-            if (dx > 0) goTo(activeIndex - 1);
-          }
-        }, { passive: true });
-      }
-
-      window.addEventListener('keydown', (event) => {
-        if (event.key === 'ArrowRight') goTo(activeIndex + 1);
-        if (event.key === 'ArrowLeft') goTo(activeIndex - 1);
-      });
+      
 
       if (sections.length) updateDeck();
     });
