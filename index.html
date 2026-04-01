@@ -1,18 +1,19 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+
+<html data-theme="dark" lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>tobe-garrett-coffeehouse-landing</title>
-  <meta name="description" content="A quiet, atmospheric landing page for Tobe Garrett — books, stories, and first-hand wisdom told like a late-night coffee shop conversation." />
-  <meta property="og:title" content="Settle In With Tobe Garrett" />
-  <meta property="og:description" content="A cozy coffeehouse landing page for Tobe Garrett's books and brand." />
-  <meta property="og:type" content="website" />
-  <link rel="preconnect" href="https://api.fontshare.com" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://api.fontshare.com/v2/css?f[]=boska@400,500,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet" />
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>tobe-garrett-coffeehouse-landing</title>
+<meta content="A quiet, atmospheric landing page for Tobe Garrett - books, stories, and first-hand wisdom told like a late-night coffee shop conversation." name="description"/>
+<meta content="Settle In With Tobe Garrett" property="og:title"/>
+<meta content="A cozy coffeehouse landing page for Tobe Garrett's books and brand." property="og:description"/>
+<meta content="website" property="og:type"/>
+<link href="https://api.fontshare.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://api.fontshare.com/v2/css?f[]=boska@400,500,700&amp;f[]=satoshi@400,500,700&amp;display=swap" rel="stylesheet"/>
+<style>
     :root {
       --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
       --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
@@ -41,18 +42,18 @@
       --font-body: 'Satoshi', Inter, sans-serif;
       --content-default: 76rem;
       --content-wide: 88rem;
-      --color-bg: #16120f;
-      --color-surface: rgba(38, 29, 24, 0.78);
-      --color-surface-2: rgba(53, 40, 32, 0.74);
-      --color-surface-offset: rgba(71, 55, 43, 0.62);
+      --color-bg: #f0e6d8;
+      --color-surface: #dfd0bd;
+      --color-surface-2: #cebda6;
+      --color-surface-offset: #c2b09a;
       --color-border: rgba(246, 232, 214, 0.12);
       --color-divider: rgba(246, 232, 214, 0.08);
-      --color-text: #f4ede4;
-      --color-text-muted: #c8bbad;
-      --color-text-faint: #9b8d7e;
-      --color-primary: #d2a56d;
-      --color-primary-hover: #e2b67f;
-      --color-primary-highlight: rgba(210, 165, 109, 0.12);
+      --color-text: #231814;
+      --color-text-muted: #5c4a3d;
+      --color-text-faint: #8a7463;
+      --color-primary: #2f6b68;
+      --color-primary-hover: #285857;
+      --color-primary-highlight: rgba(47, 107, 104, 0.12);
       --shadow-sm: 0 10px 30px rgba(0, 0, 0, 0.18);
       --shadow-md: 0 20px 60px rgba(0, 0, 0, 0.28);
       --shadow-lg: 0 35px 100px rgba(0, 0, 0, 0.42);
@@ -132,9 +133,9 @@
       opacity: 0.28;
       animation: driftGlow 16s ease-in-out infinite;
     }
-    .glow-1 { width: 22rem; height: 22rem; top: 6%; left: 4%; background: rgba(183, 107, 55, 0.26); }
-    .glow-2 { width: 16rem; height: 16rem; top: 12%; right: 8%; background: rgba(231, 188, 131, 0.18); animation-delay: -4s; }
-    .glow-3 { width: 20rem; height: 20rem; bottom: 10%; left: 20%; background: rgba(121, 67, 43, 0.18); animation-delay: -8s; }
+    .glow-1 { width: 22rem; height: 22rem; top: 6%; left: 4%; background: rgba(226, 198, 160, 0.32); }
+    .glow-2 { width: 16rem; height: 16rem; top: 12%; right: 8%; background: rgba(238, 215, 181, 0.34); animation-delay: -4s; }
+    .glow-3 { width: 20rem; height: 20rem; bottom: 10%; left: 20%; background: rgba(207, 176, 140, 0.28); animation-delay: -8s; }
 
     .wall-art, .booth-shadow, .table-haze {
       position: absolute;
@@ -146,14 +147,14 @@
       height: 11rem;
       top: 16%;
       right: 7%;
-      border: 1px solid rgba(245, 218, 184, 0.07);
+      border: 1px solid rgba(193, 167, 132, 0.3);
       border-radius: var(--radius-lg);
       background:
-        linear-gradient(145deg, rgba(109, 55, 41, 0.34), rgba(28, 22, 18, 0.16)),
-        radial-gradient(circle at 25% 30%, rgba(241, 189, 133, 0.18), transparent 30%),
-        radial-gradient(circle at 66% 64%, rgba(140, 78, 47, 0.2), transparent 24%);
-      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.02), 0 18px 50px rgba(0,0,0,0.22);
-      transform: rotate(-4deg);
+        linear-gradient(145deg, rgba(219, 188, 145, 0.76), rgba(240, 223, 200, 0.9)),
+        radial-gradient(circle at 25% 30%, rgba(255, 243, 222, 0.8), transparent 40%),
+        radial-gradient(circle at 66% 64%, rgba(212, 179, 133, 0.7), transparent 32%);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.28), 0 18px 60px rgba(0,0,0,0.16);
+      transform: rotate(-2deg);
     }
     .booth-shadow {
       left: -5%;
@@ -161,7 +162,7 @@
       width: 44rem;
       height: 15rem;
       border-radius: 50%;
-      background: radial-gradient(circle at center, rgba(73, 39, 25, 0.46), transparent 70%);
+      background: radial-gradient(circle at center, rgba(181, 153, 118, 0.5), transparent 70%);
       filter: blur(22px);
     }
     .table-haze {
@@ -170,7 +171,7 @@
       width: 30rem;
       height: 10rem;
       border-radius: 50%;
-      background: radial-gradient(circle at center, rgba(90, 50, 27, 0.28), transparent 70%);
+      background: radial-gradient(circle at center, rgba(199, 170, 132, 0.42), transparent 70%);
       filter: blur(18px);
     }
     .window-light {
@@ -290,13 +291,23 @@
     }
 
     main {
-      display: flex;
-      flex-direction: column;
-      gap: clamp(var(--space-8), 5vw, var(--space-16));
+      position: relative;
+      min-height: calc(100vh - 8rem);
+    }
+
+    .deck {
+      position: relative;
+      min-height: calc(100vh - 10rem);
+      overflow: hidden;
     }
 
     .section {
-      position: relative;
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
       padding: clamp(var(--space-6), 3.4vw, var(--space-12));
       border-radius: var(--radius-xl);
       border: 1px solid var(--color-border);
@@ -304,10 +315,34 @@
         linear-gradient(180deg, rgba(56, 42, 34, 0.62), rgba(24, 19, 16, 0.7)),
         rgba(27, 21, 17, 0.56);
       backdrop-filter: blur(14px);
-      box-shadow: var(--shadow-md);
-      transform: translate3d(0, 0, 0);
-      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      transform: translate3d(120%, 0, 0) scale(0.96);
+      opacity: 0;
+      pointer-events: none;
+      overflow-x: hidden;
       isolation: isolate;
+      transition: transform 700ms cubic-bezier(0.16,1,0.3,1), opacity 520ms cubic-bezier(0.16,1,0.3,1);
+    }
+
+    .section.is-active {
+      transform: translate3d(0, 0, 0) scale(1);
+      opacity: 1;
+      pointer-events: auto;
+      z-index: 3;
+    }
+
+    .section.is-prev {
+      transform: translate3d(-22%, 0, 0) scale(0.965);
+      opacity: 0.18;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .section.is-next {
+      transform: translate3d(22%, 0, 0) scale(0.965);
+      opacity: 0.18;
+      pointer-events: none;
+      z-index: 1;
     }
 
     .section::before {
@@ -342,6 +377,12 @@
     .float-card.delay-1 { animation-delay: -1.4s; }
     .float-card.delay-2 { animation-delay: -3.1s; }
     .float-card.delay-3 { animation-delay: -5.4s; }
+
+    .section-shell {
+      position: relative;
+      min-height: calc(100vh - 10rem);
+      padding-bottom: var(--space-6);
+    }
 
     .eyebrow {
       font-size: var(--text-xs);
@@ -608,23 +649,13 @@
     .muted-link { color: var(--color-primary); }
 
     [data-reveal] {
-      opacity: 0.72;
-      filter: blur(5px);
+      opacity: 0;
       transform: translateY(24px) scale(0.992);
-      transition: opacity 800ms cubic-bezier(0.16,1,0.3,1), transform 800ms cubic-bezier(0.16,1,0.3,1), filter 800ms cubic-bezier(0.16,1,0.3,1);
+      transition: opacity 800ms cubic-bezier(0.16,1,0.3,1), transform 800ms cubic-bezier(0.16,1,0.3,1);
     }
     [data-reveal].is-visible {
       opacity: 1;
-      filter: blur(0);
       transform: translateY(0) scale(1);
-    }
-    .in-focus {
-      opacity: 1 !important;
-      filter: blur(0) !important;
-    }
-    .out-of-focus {
-      opacity: 0.58;
-      filter: blur(5px);
     }
 
     @keyframes floatSection {
@@ -663,6 +694,30 @@
       .hero { min-height: auto; }
       .canvas-shell, #coffeeCanvas { min-height: 20rem; }
       .wall-art { opacity: 0.16; }
+      .section, .section-shell, .deck { min-height: calc(100vh - 12rem); }
+    }
+
+    .shimmer-primary,
+    .eyebrow,
+    .chip,
+    .button.button-primary span,
+    .muted-link,
+    .confessional .label,
+    .reply .label {
+      color: var(--color-primary);
+      position: relative;
+      background-image: linear-gradient(120deg, rgba(47,107,104,0.9), rgba(152,199,195,0.95), rgba(47,107,104,0.9));
+      background-size: 200% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: tealShimmer 4.2s ease-in-out infinite;
+    }
+
+    @keyframes tealShimmer {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -677,322 +732,285 @@
   </style>
 </head>
 <body>
-  <a class="skip-link" href="#main-content">Skip to content</a>
-
-  <div class="ambient-room" aria-hidden="true">
-    <div class="glow glow-1"></div>
-    <div class="glow glow-2"></div>
-    <div class="glow glow-3"></div>
-    <div class="wall-art"></div>
-    <div class="booth-shadow"></div>
-    <div class="table-haze"></div>
-  </div>
-
-  <div class="page-shell">
-    <header class="masthead" aria-label="Primary">
-      <a class="brand" href="#top" aria-label="Tobe Garrett home">
-        <svg class="brand-mark" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M13 42C13 27.6406 24.6406 16 39 16H43C46.866 16 50 19.134 50 23V36C50 39.866 46.866 43 43 43H13V42Z" stroke="currentColor" stroke-width="2.5"/>
-          <path d="M50 25H54C57.3137 25 60 27.6863 60 31C60 34.3137 57.3137 37 54 37H50" stroke="currentColor" stroke-width="2.5"/>
-          <path d="M18 48H48" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-          <path d="M25 12C25 12 24 8 27 5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-          <path d="M35 12C35 12 34 8 37 5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-        </svg>
-        <span class="brand-text">
-          <strong>Tobe Garrett</strong>
-          <span>Stories that pull people in</span>
-        </span>
-      </a>
-
-      <nav class="nav-links">
-        <a href="#books">Books</a>
-        <a href="#series">I Am Series</a>
-        <a href="#about">About</a>
-        <a href="#voices">Voices</a>
-        <a href="#contact">Contact</a>
-      </nav>
-
-      <div class="button-row">
-        <a class="button button-primary" href="https://www.amazon.com/stores/author/B0DYFYB2Y9/allbooks?_encoding=UTF8&ref_=aufs_ap_ahdr_dsk_ab" target="_blank" rel="noopener noreferrer">Browse Tobe on Amazon</a>
-        <a class="button" href="https://www.amazon.com/stores/Tobias-Garrett/author/B07X6NLYTZ/allbooks?ccs_id=0a32b85b-0c56-464e-be46-b60ed6ef5c16" target="_blank" rel="noopener noreferrer">Browse Tobias titles</a>
-      </div>
-    </header>
-
-    <main id="main-content">
-      <section class="section hero float-card delay-1" data-reveal>
-        <div>
-          <div class="eyebrow">Tobe Garrett</div>
-          <h1>If a reader lands here wondering what kind of author he is, <span class="accent">they should know inside a few seconds.</span></h1>
-          <p class="lede">
-            Tobe Garrett writes for readers who want more than surface level entertainment. His catalog spans science fiction, historical fiction, fantasy, adventure, practical how-to guides, and the “I Am” series, with each title built to pull the reader inside the subject instead of leaving them outside looking in.
-          </p>
-
-          <div class="confessional">
-            <span class="label">Why readers stay</span>
-            <p>He does not write to impress people with how much he knows. He writes so the reader can see, feel, and understand something they did not fully grasp before they opened the book.</p>
-          </div>
-
-          <div class="reply">
-            <span class="label">What that means</span>
-            <p>
-              When someone starts one of these books, they are not just getting information or plot. They are stepping into a point of view. That is what makes the story move. That is what makes the lesson stick.
-            </p>
-          </div>
-
-          <div class="button-row" style="margin-top: var(--space-6);">
-            <a class="button button-primary" href="https://www.amazon.com/stores/author/B0DYFYB2Y9/allbooks?_encoding=UTF8&ref_=aufs_ap_ahdr_dsk_ab" target="_blank" rel="noopener noreferrer">Start with Tobe</a>
-            <a class="button" href="mailto:Tobephoto@gmail.com">Send a note</a>
-          </div>
-        </div>
-
-        <div class="hero-side">
-          <div class="canvas-shell" aria-hidden="true">
-            <canvas id="coffeeCanvas"></canvas>
-            <div class="canvas-note">Morning light, a book, and space to look closer.</div>
-          </div>
-
-          <div class="fact-grid">
-            <article class="fact">
-              <strong>55+ original titles</strong>
-              <p>Across science fiction, historical fiction, fantasy, adventure, informative books, and how-to guides.</p>
-            </article>
-            <article class="fact">
-              <strong>Two author shelves</strong>
-              <p>Most books live under Tobe, while the historical titles can be found under Tobias Garrett.</p>
-            </article>
-            <article class="fact">
-              <strong>Paperback and e-book</strong>
-              <p>Readers can choose the format that fits the moment — shelf copy or instant download.</p>
-            </article>
-            <article class="fact">
-              <strong>Experience over posture</strong>
-              <p>Each book aims to feel like perspective shared by someone who has seen a little of everything.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="books" class="section float-card delay-2" data-reveal>
-        <div class="section-head">
-          <div>
-            <div class="eyebrow">The catalog</div>
-            <h2>The range is broad, which gives readers more ways to enter the work.</h2>
-          </div>
-          <p>That matters because different readers come in looking for different outcomes, and the catalog makes room for all of them.</p>
-        </div>
-
-        <div class="split">
-          <article class="panel">
-            <h3>Explore the full catalog</h3>
-            <p>
-              Tobe Garrett’s collection spans science fiction, historical fiction, fantasy, adventure, “I Am” books, and how-to guides. Most titles are listed under Tobe Garrett. Readers looking for the historical titles should use the Tobias Garrett link. All of these titles are original content.
-            </p>
-            <div class="chips">
-              <span class="chip">Science fiction</span>
-              <span class="chip">Historical fiction</span>
-              <span class="chip">Fantasy</span>
-              <span class="chip">Adventure</span>
-              <span class="chip">How-to guides</span>
-              <span class="chip">“I Am” series</span>
-            </div>
-            <div class="button-row" style="margin-top: var(--space-6);">
-              <a class="button button-primary" href="https://www.amazon.com/stores/Tobe-Garrett/author/B0DYFYB2Y9?ref=ap_rdr&shoppingPortalEnabled=true&ccs_id=36385333-db47-4c3c-b134-47abcd089765" target="_blank" rel="noopener noreferrer">Browse Tobe books</a>
-              <a class="button" href="https://www.amazon.com/stores/Tobias-Garrett/author/B07X6NLYTZ/allbooks?ccs_id=0a32b85b-0c56-464e-be46-b60ed6ef5c16" target="_blank" rel="noopener noreferrer">Browse Tobias books</a>
-            </div>
-          </article>
-
-          <div class="genre-grid">
-            <article class="genre-item">
-              <h3>Immersive worlds</h3>
-              <p>Science fiction, fantasy, and adventure stories that transport readers to new possibilities.</p>
-            </article>
-            <article class="genre-item">
-              <h3>Real stories and guides</h3>
-              <p>Historical fiction grounded in real events and practical how-to books that teach something useful.</p>
-            </article>
-            <article class="genre-item">
-              <h3>Read your way</h3>
-              <p>Paperback or e-book, immediate download or physical copy — a format for every reader’s habit.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="series" class="section float-card delay-3" data-reveal>
-        <div class="section-head">
-          <div>
-            <div class="eyebrow">The “I Am” series</div>
-            <h2>This is where the positioning separates him from a lot of other authors.</h2>
-          </div>
-          <p>Instead of describing the subject from the outside, these books let the subject tell the story in first person.</p>
-        </div>
-
-        <div class="split">
-          <article class="panel">
-            <h3>What makes the series different</h3>
-            <p>
-              The “I Am” series gives voice to cities, states, places, people, and symbols that shape the world. Each title is written from a first-person perspective, which turns history into something personal, engaging, and easier to remember.
-            </p>
-            <p>
-              For the reader, that changes the experience from reading about the subject to hearing from it.
-            </p>
-            <a class="button button-primary" href="https://www.amazon.com/dp/B0DYF7VZ37?binding=kindle_edition&ref_=ast_author_bsi" target="_blank" rel="noopener noreferrer">Explore the series</a>
-          </article>
-
-          <div class="iam-list">
-            <article class="iam-item"><strong>I Am the United States Army</strong><span>Discipline. Sacrifice. Brotherhood. Step inside the voice of those who serve.</span></article>
-            <article class="iam-item"><strong>I Am a Wild Hog</strong><span>Raw instinct. Untamed survival. Life with no rules.</span></article>
-            <article class="iam-item"><strong>I Am a Time Traveler</strong><span>Past. Present. Future. All at once.</span></article>
-            <article class="iam-item"><strong>I Am Gold</strong><span>Power, wealth, and obsession told by the element that shaped empires.</span></article>
-            <article class="iam-item"><strong>I Am Caesar</strong><span>Ambition, betrayal, and empire from within.</span></article>
-            <article class="iam-item"><strong>I Am the Great Wall of China</strong><span>A world wonder remembering centuries.</span></article>
-          </div>
-        </div>
-      </section>
-
-      <section id="about" class="section float-card delay-1" data-reveal>
-        <div class="section-head">
-          <div>
-            <div class="eyebrow">About the author</div>
-            <h2>He writes with range, but the thread running through the work is clarity.</h2>
-          </div>
-          <p>That is important when someone is deciding whether this is an author they want to spend time with.</p>
-        </div>
-
-        <div class="split">
-          <article class="panel">
-            <h3>Meet Tobe Garrett</h3>
-            <p>
-              Tobe Garrett is an independent author based in Austin, Texas, with 55+ titles spanning science fiction, historical fiction, fantasy, adventure, and practical how-to guides. The throughline is careful research, thoughtful storytelling, and practical knowledge that connects with readers.
-            </p>
-            <p>
-              The strongest way to present him is as someone who knows how to take a big subject and make it readable, relatable, and worth finishing.
-            </p>
-          </article>
-
-          <article class="panel">
-            <h3>How each book comes to life</h3>
-            <p><strong>Research &amp; planning:</strong> digging deep into each topic or imagined world before the draft begins.</p>
-            <p><strong>Drafting &amp; revising:</strong> shaping each manuscript through multiple rounds to sharpen clarity, pacing, and emotional depth.</p>
-            <p><strong>Reader respect:</strong> whether fiction or nonfiction, the work aims to reward the reader’s time.</p>
-          </article>
-        </div>
-      </section>
-
-      <section id="voices" class="section float-card delay-2" data-reveal>
-        <div class="section-head">
-          <div>
-            <div class="eyebrow">Reader response</div>
-            <h2>The feedback points to the same conclusion from different angles.</h2>
-          </div>
-          <p>Readers keep pointing to world-building, practical clarity, historical detail, pacing, and range across genres.</p>
-        </div>
-
-        <div class="quote-grid">
-          <article class="quote">
-            <p>“The world-building is intricate, and the characters felt so real I couldn't put it down.”</p>
-            <cite>Jennifer Chen<span class="role">Science Fiction Reader</span></cite>
-          </article>
-          <article class="quote">
-            <p>“Each fantasy title delivers imaginative storytelling with compelling plot twists.”</p>
-            <cite>Tim Huy<span class="role">Fantasy Book Club Member</span></cite>
-          </article>
-          <article class="quote">
-            <p>“The how-to guides are practical, well-organized, and actually easy to follow.”</p>
-            <cite>Lisa Fuller<span class="role">How-To Reader</span></cite>
-          </article>
-          <article class="quote">
-            <p>“The pace is perfect, and every chapter left me wanting more.”</p>
-            <cite>David Okafor<span class="role">Adventure Genre Fan</span></cite>
-          </article>
-          <article class="quote">
-            <p>“Historical fiction that brings real periods to life with authentic detail.”</p>
-            <cite>Rebecca Walsh<span class="role">Historical Fiction Reader</span></cite>
-          </article>
-          <article class="quote">
-            <p>“There’s genuinely something for every reader across the catalog.”</p>
-            <cite>Alex Martinez<span class="role">Multi-Genre Reader</span></cite>
-          </article>
-        </div>
-      </section>
-
-      <section class="section float-card delay-3" data-reveal>
-        <div class="section-head">
-          <div>
-            <div class="eyebrow">Questions readers ask</div>
-            <h2>Most of the buying questions are straightforward.</h2>
-          </div>
-          <p>That helps remove friction for people who are interested and just need a clear next step.</p>
-        </div>
-
-        <div class="faq-grid">
-          <article class="faq">
-            <strong>Where can I buy the books?</strong>
-            <p>All titles are available on Amazon through the Tobe Garrett and Tobias Garrett author pages.</p>
-          </article>
-          <article class="faq">
-            <strong>What genres does he write in?</strong>
-            <p>Science fiction, historical fiction, fantasy, adventure, practical guides, and the “I Am” series.</p>
-          </article>
-          <article class="faq">
-            <strong>Paperback or e-book?</strong>
-            <p>Both formats are available, which keeps the storefront simple and accessible.</p>
-          </article>
-        </div>
-      </section>
-
-      <section id="contact" class="section float-card delay-1" data-reveal>
-        <div class="section-head">
-          <div>
-            <div class="eyebrow">Contact</div>
-            <h2>When someone wants to reach out, the next step should feel simple.</h2>
-          </div>
-          <p>The source material says Tobe Garrett responds personally to messages and uses contact details only to answer inquiries.</p>
-        </div>
-
-        <div class="contact-grid">
-          <article class="contact-panel">
-            <h3>Reach Tobe Garrett directly</h3>
-            <p>Email to discuss favorite titles, ask about new releases, or explore collaboration opportunities.</p>
-            <p><a class="muted-link" href="mailto:Tobephoto@gmail.com">Tobephoto@gmail.com</a></p>
-            <p>Austin, Texas</p>
-            <p style="color: var(--color-text-faint);">When someone reaches out, the message is used only to respond and is not shared with third parties.</p>
-          </article>
-
-          <article class="contact-panel">
-            <h3>Leave a message</h3>
-            <form action="https://tobegarrett.com/contact" method="post">
-              <label>
-                <span>Name</span>
-                <input type="text" name="name" placeholder="Your name" />
-              </label>
-              <label>
-                <span>Email</span>
-                <input type="email" name="email" placeholder="you@example.com" />
-              </label>
-              <label>
-                <span>Message</span>
-                <textarea name="message" placeholder="What would you like to ask, say, or share?"></textarea>
-              </label>
-              <button class="button button-primary" type="submit">Send message</button>
-            </form>
-          </article>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      <span>© 2026 Tobe Garrett. All rights reserved.</span>
-      <span>
-        <a class="muted-link" href="https://tobegarrett.com/#privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<div aria-hidden="true" class="ambient-room">
+<div class="glow glow-1"></div>
+<div class="glow glow-2"></div>
+<div class="glow glow-3"></div>
+<div class="wall-art"></div>
+<div class="booth-shadow"></div>
+<div class="table-haze"></div>
+<div class="window-light"></div>
+</div>
+<div class="page-shell">
+<header aria-label="Primary" class="masthead">
+<a aria-label="Tobe Garrett home" class="brand" href="#top">
+<svg aria-hidden="true" class="brand-mark" fill="none" viewbox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+<path d="M13 42C13 27.6406 24.6406 16 39 16H43C46.866 16 50 19.134 50 23V36C50 39.866 46.866 43 43 43H13V42Z" stroke="currentColor" stroke-width="2.5"></path>
+<path d="M50 25H54C57.3137 25 60 27.6863 60 31C60 34.3137 57.3137 37 54 37H50" stroke="currentColor" stroke-width="2.5"></path>
+<path d="M18 48H48" stroke="currentColor" stroke-linecap="round" stroke-width="2.5"></path>
+<path d="M25 12C25 12 24 8 27 5" stroke="currentColor" stroke-linecap="round" stroke-width="2.5"></path>
+<path d="M35 12C35 12 34 8 37 5" stroke="currentColor" stroke-linecap="round" stroke-width="2.5"></path>
+</svg>
+<span class="brand-text">
+<strong id="brandTitle" class="shimmer-primary">TOBE GARRETT</strong>
+<span id="brandSubtitle" class="shimmer-primary">Stories that pull people in</span>
+</span>
+</a>
+<nav class="nav-links">
+<a href="#books">Books</a>
+<a href="#series">I Am Series</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+</nav>
+<div class="button-row">
+<a class="button button-primary" href="https://www.amazon.com/stores/author/B0DYFYB2Y9/allbooks?_encoding=UTF8&amp;ref_=aufs_ap_ahdr_dsk_ab" rel="noopener noreferrer" target="_blank">Browse Tobe on Amazon</a>
+<a class="button" href="https://www.amazon.com/stores/Tobias-Garrett/author/B07X6NLYTZ/allbooks?ccs_id=0a32b85b-0c56-464e-be46-b60ed6ef5c16" rel="noopener noreferrer" target="_blank">Browse Tobias titles</a>
+</div>
+</header>
+<main id="main-content">
+<div class="deck">
+<section class="section hero float-card delay-1" data-reveal="">
+<div>
+<div class="eyebrow">You are in the right place if books still matter to you</div>
+<h1>You want an author you can trust with your time. <span class="accent">Here is why readers keep coming back to Tobe Garrett.</span></h1>
+<p class="lede">When someone opens a new book, they give it something valuable. They give it their attention, their late nights, their free hours. Tobe Garrett writes for readers who care what they get in return. Science fiction. Historical fiction. Fantasy. Adventure. How to guides. The "I Am" series that lets cities, armies, elements, and landmarks speak in first person. Each title is built so the reader feels a clear pull into the story or subject. Worlds feel complete. History feels close. Practical guides feel clear enough to use.</p>
+<div class="confessional">
+<span class="label">Why readers stay</span>
+<p>Readers who value their time want books that give them something they can use or think about long after they finish the last page.</p>
+</div>
+<div class="reply">
+<span class="label">What that means</span>
+<p>Across more than fifty five titles, this catalog gives those readers options that fit that standard.</p>
+</div>
+<div class="button-row" style="margin-top: var(--space-6);">
+<a class="button button-primary" href="https://www.amazon.com/stores/author/B0DYFYB2Y9/allbooks?_encoding=UTF8&amp;ref_=aufs_ap_ahdr_dsk_ab" rel="noopener noreferrer" target="_blank">Start with Tobe</a>
+<a class="button" href="mailto:Tobephoto@gmail.com">Send a note</a>
+</div>
+</div>
+<div class="hero-side">
+<div aria-hidden="true" class="canvas-shell">
+<canvas id="coffeeCanvas"></canvas>
+<div class="canvas-note">Morning light, a book, and space to look closer.</div>
+</div>
+<div class="fact-grid">
+<article class="fact">
+<strong>55+ original titles</strong>
+<p>Across science fiction, historical fiction, fantasy, adventure, informative books, and how-to guides.</p>
+</article>
+<article class="fact">
+<strong>Two author shelves</strong>
+<p>Most books live under Tobe, while the historical titles can be found under Tobias Garrett.</p>
+</article>
+<article class="fact">
+<strong>Paperback and e-book</strong>
+<p>Readers can choose the format that fits the moment - shelf copy or instant download.</p>
+</article>
+<article class="fact">
+<strong>Experience over posture</strong>
+<p>Each book aims to feel like perspective shared by someone who has seen a little of everything.</p>
+</article>
+</div>
+</div>
+</section>
+<section class="section float-card delay-2" data-reveal="" id="books">
+<div class="section-head">
+<div>
+<div class="eyebrow">You want options that actually fit how you like to read</div>
+<h2>The catalog is set up so you can see where to start.</h2>
+</div>
+<p>You might be here for a long science fiction run. You might want one precise how to guide. You might want a historical period that finally stays with you.</p>
+</div>
+<div class="split">
+<article class="panel">
+<h3>Explore the full catalog</h3>
+<p>Tobe Garrett has written more than fifty five original books across science fiction, historical fiction, fantasy, adventure, practical how to guides and informative titles, and the "I Am" series in first person. Most titles sit under Tobe Garrett on Amazon. Readers looking for historical titles can search under Tobias Garrett using the links on this page.</p>
+<div class="chips">
+<span class="chip">Science fiction</span>
+<span class="chip">Historical fiction</span>
+<span class="chip">Fantasy</span>
+<span class="chip">Adventure</span>
+<span class="chip">How-to guides</span>
+<span class="chip">“I Am” series</span>
+</div>
+<div class="button-row" style="margin-top: var(--space-6);">
+<a class="button button-primary" href="https://www.amazon.com/stores/Tobe-Garrett/author/B0DYFYB2Y9?ref=ap_rdr&amp;shoppingPortalEnabled=true&amp;ccs_id=36385333-db47-4c3c-b134-47abcd089765" rel="noopener noreferrer" target="_blank">Browse Tobe books</a>
+<a class="button" href="https://www.amazon.com/stores/Tobias-Garrett/author/B07X6NLYTZ/allbooks?ccs_id=0a32b85b-0c56-464e-be46-b60ed6ef5c16" rel="noopener noreferrer" target="_blank">Browse Tobias books</a>
+</div>
+</article>
+<div class="genre-grid">
+<article class="genre-item">
+<h3>Immersive stories</h3>
+<p>Worlds that feel lived in, with characters that stay in your mind after the last chapter.</p>
+</article>
+<article class="genre-item">
+<h3>Real events and clear guides</h3>
+<p>Historical fiction that respects real timelines and details, and how to books that walk through a topic in plain language and concrete steps.</p>
+</article>
+<article class="genre-item">
+<h3>Straightforward formats</h3>
+<p>Every title is available as a paperback and as an ebook so you can read on a device or keep the book on your shelf.</p>
+</article>
+</div>
+</div>
+</section>
+<section class="section float-card delay-3" data-reveal="" id="series">
+<div class="section-head">
+<div>
+<div class="eyebrow">You are curious how history would sound if it could talk</div>
+<h2>The "I Am" series explores that question through first person stories.</h2>
+</div>
+<p>If the United States Army could tell its own story, what would it say. If gold could explain what people have done for it, how would it sound. If the Great Wall of China could talk about what it has seen, what details would it share.</p>
+</div>
+<div class="split">
+<article class="panel">
+<h3>What makes the series different</h3>
+<p>The "I Am" series gives voice to cities, armies, elements, places, and people. Each book speaks in first person so the subject explains itself. Readers who want history to feel personal often begin here. The structure makes names, dates, and events easier to remember because they arrive through a single steady voice.</p>
+<p>For the reader, this changes the experience from reading about a subject to hearing from it.</p>
+<a class="button button-primary" href="https://www.amazon.com/dp/B0DYF7VZ37?binding=kindle_edition&amp;ref_=ast_author_bsi" rel="noopener noreferrer" target="_blank">Explore the series</a>
+</article>
+<div class="iam-list">
+<article class="iam-item"><strong>I Am the United States Army</strong><span>A view into discipline, service, and shared identity from inside the Army.</span></article>
+<article class="iam-item"><strong>I Am a Wild Hog</strong><span>Survival, risk, and instinct told through a creature that lives close to the land.</span></article>
+<article class="iam-item"><strong>I Am a Time Traveler</strong><span>A way to move through past, present, and future in a continuous experience.</span></article>
+<article class="iam-item"><strong>I Am Gold</strong><span>Centuries of trade, conflict, and desire described by the metal everyone recognizes.</span></article>
+<article class="iam-item"><strong>I Am Caesar</strong><span>Power and consequence told from inside the mind of a ruler.</span></article>
+<article class="iam-item"><strong>I Am the Great Wall of China</strong><span>A long memory of travelers, soldiers, and families from one of the world's landmarks.</span></article>
+</div>
+</div>
+</section>
+<section class="section float-card delay-1" data-reveal="" id="about">
+<div class="section-head">
+<div>
+<div class="eyebrow">You want to know who you are reading</div>
+<h2>Here is how Tobe Garrett approaches the work.</h2>
+</div>
+<p>Knowing the person behind the catalog helps readers decide if this is someone they want to spend time with.</p>
+</div>
+<div class="split">
+<article class="panel">
+<h3>Meet Tobe Garrett</h3>
+<p>Tobe Garrett is an independent author based in Austin, Texas, with more than fifty five titles in science fiction, historical fiction, fantasy, adventure, and how to topics. The thread that runs through the work is careful research, thoughtful storytelling, and practical knowledge that connects with readers.</p>
+<p>Each book follows a simple pattern. Research and planning, drafting and revision, and a focus on respect for the reader. The goal is that a reader closes the book with a clearer picture or skill than they had at the start.</p>
+</article>
+<article class="panel">
+<h3>How each book comes to life</h3>
+<p><strong>Research &amp; planning:</strong> digging deep into each topic or imagined world before the draft begins.</p>
+<p><strong>Drafting &amp; revising:</strong> shaping each manuscript through multiple rounds to sharpen clarity, pacing, and emotional depth.</p>
+<p><strong>Reader respect:</strong> whether fiction or nonfiction, the work aims to reward the reader’s time.</p>
+</article>
+</div>
+</section>
+<section class="section float-card delay-2" data-reveal="" id="voices">
+<div class="section-head">
+<div>
+<div class="eyebrow">You want proof from other readers, not only claims</div>
+<h2>Here is what readers chose to say after they finished.</h2>
+</div>
+<p>Readers who find these books through Amazon often focus on the same points. World building, character depth, pacing, clarity in how to guides, and historical detail.</p>
+</div>
+<div class="quote-grid">
+<article class="quote">
+<p>“The world-building is intricate, and the characters felt so real I couldn't put it down.”</p>
+<cite>Jennifer Chen<span class="role">Science Fiction Reader</span></cite>
+</article>
+<article class="quote">
+<p>“Each fantasy title delivers imaginative storytelling with compelling plot twists.”</p>
+<cite>Tim Huy<span class="role">Fantasy Book Club Member</span></cite>
+</article>
+<article class="quote">
+<p>“The how-to guides are practical, well-organized, and actually easy to follow.”</p>
+<cite>Lisa Fuller<span class="role">How-To Reader</span></cite>
+</article>
+<article class="quote">
+<p>“The pace is perfect, and every chapter left me wanting more.”</p>
+<cite>David Okafor<span class="role">Adventure Genre Fan</span></cite>
+</article>
+<article class="quote">
+<p>“Historical fiction that brings real periods to life with authentic detail.”</p>
+<cite>Rebecca Walsh<span class="role">Historical Fiction Reader</span></cite>
+</article>
+<article class="quote">
+<p>“There’s genuinely something for every reader across the catalog.”</p>
+<cite>Alex Martinez<span class="role">Multi-Genre Reader</span></cite>
+</article>
+</div>
+</section>
+<section class="section float-card delay-3" data-reveal="">
+<div class="section-head">
+<div>
+<div class="eyebrow">You have a few questions before you choose a title</div>
+<h2>The practical details are simple.</h2>
+</div>
+<p>Most readers want to know where to buy, which genres are available, and how to decide where to start.</p>
+</div>
+<div class="faq-grid">
+<article class="faq">
+<strong>Where do I buy the books.</strong>
+<p>All titles are available on Amazon under Tobe Garrett and Tobias Garrett. Links on this page take you directly to each catalog.</p>
+</article>
+<article class="faq">
+<strong>What genres are available.</strong>
+<p>Science fiction, historical fiction, fantasy, adventure, how to guides, informative titles, and the "I Am" series.</p>
+</article>
+<article class="faq">
+<strong>Where should I start.</strong>
+<p>Many readers begin with science fiction or fantasy if they want a long story, with historical fiction or the "I Am" series if they want to connect with a period, and with a how to book when they have a specific problem to solve.</p>
+</article>
+</div>
+</section>
+<section class="section float-card delay-1" data-reveal="" id="contact">
+<div class="section-head">
+<div>
+<div class="eyebrow">When you want to ask something directly</div>
+<h2>Here is how to reach Tobe Garrett.</h2>
+</div>
+<p>Some readers want to confirm details about a title, and some want to talk about events, bulk orders, or collaboration.</p>
+</div>
+<div class="contact-grid">
+<article class="contact-panel">
+<h3>Reach Tobe Garrett directly</h3>
+<p>Messages sent here go directly to Tobe Garrett. You can discuss favorite titles, ask about new releases, or explore collaboration.</p>
+<p><a class="muted-link" href="mailto:Tobephoto@gmail.com">Tobephoto@gmail.com</a></p>
+<p>Austin, Texas</p>
+<p style="color: var(--color-text-faint);">Contact details are used to reply to your question and are not shared with outside companies.</p>
+</article>
+<article class="contact-panel">
+<h3>Leave a message</h3>
+<form action="https://tobegarrett.com/contact" method="post">
+<label>
+<span>Name</span>
+<input name="name" placeholder="Your name" type="text"/>
+</label>
+<label>
+<span>Email</span>
+<input name="email" placeholder="you@example.com" type="email"/>
+</label>
+<label>
+<span>Message</span>
+<textarea name="message" placeholder="What would you like to ask, say, or share?"></textarea>
+</label>
+<button class="button button-primary" type="submit">Send message</button>
+</form>
+</article>
+</div>
+</section>
+</div></main>
+<div class="button-row" style="justify-content: center; margin-top: var(--space-8);">
+<button class="button" id="prevSection" type="button">← Previous</button>
+<button class="button button-primary" id="nextSection" type="button">Next →</button>
+</div>
+<footer>
+<span>© 2026 Tobe Garrett. All rights reserved.</span>
+<span>
+<a class="muted-link" href="https://tobegarrett.com/#privacy-policy" rel="noopener noreferrer" target="_blank">Privacy Policy</a>
         ·
-        <a class="muted-link" href="https://tobegarrett.com/contact" target="_blank" rel="noopener noreferrer">Terms of Service</a>
-      </span>
-    </footer>
-  </div>
-
-  <script src="https://unpkg.com/three@0.161.0/build/three.min.js" defer></script>
-  <script>
+        <a class="muted-link" href="https://tobegarrett.com/contact" rel="noopener noreferrer" target="_blank">Terms of Service</a>
+</span>
+</footer>
+</div>
+<script defer="" src="https://unpkg.com/three@0.161.0/build/three.min.js"></script>
+<script>
     window.addEventListener('DOMContentLoaded', () => {
       const revealItems = document.querySelectorAll('[data-reveal]');
       const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -1008,23 +1026,7 @@
       }
 
       
-      const sections = Array.from(document.querySelectorAll('main .section'));
-      const focusObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.intersectionRatio >= 0.72) {
-            sections.forEach((section) => section.classList.add('out-of-focus'));
-            entry.target.classList.remove('out-of-focus');
-            entry.target.classList.add('in-focus');
-          } else if (!entry.isIntersecting) {
-            entry.target.classList.remove('in-focus');
-          }
-        });
-      }, { threshold: [0.15, 0.45, 0.72, 0.95] });
-      sections.forEach((section, index) => {
-        if (index !== 0) section.classList.add('out-of-focus');
-        focusObserver.observe(section);
-      });
-
+      
       const canvas = document.getElementById('coffeeCanvas');
       if (!canvas || !window.THREE || reduceMotion) return;
 
@@ -1050,7 +1052,7 @@
 
       const floor = new THREE.Mesh(
         new THREE.PlaneGeometry(11, 11),
-        new THREE.MeshStandardMaterial({ color: 0x624736, roughness: 0.95 })
+        new THREE.MeshStandardMaterial({ color: 0xd9c4aa, roughness: 0.9 })
       );
       floor.rotation.x = -Math.PI / 2;
       floor.position.y = -1.45;
@@ -1058,14 +1060,14 @@
 
       const wall = new THREE.Mesh(
         new THREE.PlaneGeometry(10, 6),
-        new THREE.MeshStandardMaterial({ color: 0x2f231b, roughness: 0.98, side: THREE.DoubleSide })
+        new THREE.MeshStandardMaterial({ color: 0xe3d2be, roughness: 0.96, side: THREE.DoubleSide })
       );
       wall.position.set(0, 1.2, -3.2);
       group.add(wall);
 
       const windowFrame = new THREE.Mesh(
         new THREE.BoxGeometry(2.5, 2.8, 0.06),
-        new THREE.MeshStandardMaterial({ color: 0x6a4b37, roughness: 0.9 })
+        new THREE.MeshStandardMaterial({ color: 0xcab599, roughness: 0.9 })
       );
       windowFrame.position.set(-2.2, 1.5, -3.05);
       group.add(windowFrame);
@@ -1088,7 +1090,7 @@
 
       const bookCover = new THREE.Mesh(
         new THREE.BoxGeometry(2.7, 0.18, 2.05),
-        new THREE.MeshStandardMaterial({ color: 0x6a3d2c, roughness: 0.84 })
+        new THREE.MeshStandardMaterial({ color: 0xd1b596, roughness: 0.84 })
       );
       bookCover.position.set(1.3, -1.0, -0.15);
       bookCover.rotation.y = -0.42;
@@ -1155,6 +1157,94 @@
         requestAnimationFrame(animate);
       };
       animate();
+    });
+  </script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const brandTitle = document.getElementById('brandTitle');
+      const brandSubtitle = document.getElementById('brandSubtitle');
+      if (brandTitle && brandSubtitle) {
+        const brandTitles = [
+          'TOBE GARRETT',
+          'I AM GOLD',
+          'I AM CAESAR',
+          'I AM THE GREAT WALL OF CHINA',
+          'I AM A TIME TRAVELER',
+          'I AM THE UNITED STATES ARMY'
+        ];
+        let brandIndex = 0;
+        setInterval(() => {
+          brandIndex = (brandIndex + 1) % brandTitles.length;
+          brandTitle.style.opacity = '0';
+          brandSubtitle.style.opacity = '0';
+          setTimeout(() => {
+            brandTitle.textContent = brandTitles[brandIndex];
+            brandSubtitle.textContent = brandIndex === 0
+              ? 'Stories that pull people in'
+              : 'A title from the catalog';
+            brandTitle.style.opacity = '1';
+            brandSubtitle.style.opacity = '1';
+          }, 220);
+        }, 2600);
+      }
+
+      const deck = document.querySelector('.deck');
+      const sections = deck ? Array.from(deck.querySelectorAll('.section')) : [];
+      const prevButton = document.getElementById('prevSection');
+      const nextButton = document.getElementById('nextSection');
+      let activeIndex = 0;
+
+      const updateDeck = () => {
+        sections.forEach((section, index) => {
+          section.classList.remove('is-active', 'is-prev', 'is-next');
+          if (index === activeIndex) {
+            section.classList.add('is-active');
+            section.scrollTo({ top: 0, behavior: 'smooth' });
+          } else if (index < activeIndex) {
+            section.classList.add('is-prev');
+          } else {
+            section.classList.add('is-next');
+          }
+        });
+        if (prevButton) prevButton.disabled = activeIndex === 0;
+        if (nextButton) nextButton.disabled = activeIndex === sections.length - 1;
+      };
+
+      const goTo = (index) => {
+        if (!sections.length) return;
+        activeIndex = Math.max(0, Math.min(sections.length - 1, index));
+        updateDeck();
+      };
+
+      if (prevButton) prevButton.addEventListener('click', () => goTo(activeIndex - 1));
+      if (nextButton) nextButton.addEventListener('click', () => goTo(activeIndex + 1));
+
+      if (deck) {
+        let touchStartX = 0;
+        let touchStartY = 0;
+        deck.addEventListener('touchstart', (event) => {
+          const touch = event.changedTouches[0];
+          touchStartX = touch.clientX;
+          touchStartY = touch.clientY;
+        }, { passive: true });
+
+        deck.addEventListener('touchend', (event) => {
+          const touch = event.changedTouches[0];
+          const dx = touch.clientX - touchStartX;
+          const dy = touch.clientY - touchStartY;
+          if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.2) {
+            if (dx < 0) goTo(activeIndex + 1);
+            if (dx > 0) goTo(activeIndex - 1);
+          }
+        }, { passive: true });
+      }
+
+      window.addEventListener('keydown', (event) => {
+        if (event.key === 'ArrowRight') goTo(activeIndex + 1);
+        if (event.key === 'ArrowLeft') goTo(activeIndex - 1);
+      });
+
+      if (sections.length) updateDeck();
     });
   </script>
 </body>
