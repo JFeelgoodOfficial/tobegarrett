@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>tobe-garrett-coffeehouse-landing</title>
+  <meta name="description" content="A quiet, atmospheric landing page for Tobe Garrett — books, stories, and first-hand wisdom told like a late-night coffee shop conversation." />
+  <meta property="og:title" content="Settle In With Tobe Garrett" />
+  <meta property="og:description" content="A cozy coffeehouse landing page for Tobe Garrett's books and brand." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://api.fontshare.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://api.fontshare.com/v2/css?f[]=boska@400,500,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+      --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.8rem);
+      --space-1: 0.25rem;
+      --space-2: 0.5rem;
+      --space-3: 0.75rem;
+      --space-4: 1rem;
+      --space-5: 1.25rem;
+      --space-6: 1.5rem;
+      --space-8: 2rem;
+      --space-10: 2.5rem;
+      --space-12: 3rem;
+      --space-16: 4rem;
+      --space-20: 5rem;
+      --space-24: 6rem;
+      --radius-sm: 0.375rem;
+      --radius-md: 0.75rem;
+      --radius-lg: 1.25rem;
+      --radius-xl: 1.75rem;
+      --radius-full: 9999px;
+      --font-display: 'Boska', Georgia, serif;
+      --font-body: 'Satoshi', Inter, sans-serif;
+      --content-default: 76rem;
+      --content-wide: 88rem;
+      --color-bg: #16120f;
+      --color-surface: rgba(38, 29, 24, 0.78);
+      --color-surface-2: rgba(53, 40, 32, 0.74);
+      --color-surface-offset: rgba(71, 55, 43, 0.62);
+      --color-border: rgba(246, 232, 214, 0.12);
+      --color-divider: rgba(246, 232, 214, 0.08);
+      --color-text: #f4ede4;
+      --color-text-muted: #c8bbad;
+      --color-text-faint: #9b8d7e;
+      --color-primary: #d2a56d;
+      --color-primary-hover: #e2b67f;
+      --color-primary-highlight: rgba(210, 165, 109, 0.12);
+      --shadow-sm: 0 10px 30px rgba(0, 0, 0, 0.18);
+      --shadow-md: 0 20px 60px rgba(0, 0, 0, 0.28);
+      --shadow-lg: 0 35px 100px rgba(0, 0, 0, 0.42);
+      --transition-interactive: 220ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * , *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      line-height: 1.6;
+      color: var(--color-text);
+      background:
+        radial-gradient(circle at 10% 18%, rgba(255, 221, 178, 0.18), transparent 18%),
+        linear-gradient(90deg, rgba(255, 232, 205, 0.16) 0 2%, transparent 2% 100%),
+        linear-gradient(180deg, #3b2e24 0%, #211913 24%, #17120e 100%);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at center, rgba(255, 214, 167, 0.035), transparent 58%),
+        repeating-linear-gradient(90deg, rgba(255,255,255,0.01) 0 1px, transparent 1px 220px);
+      opacity: 0.75;
+      mix-blend-mode: soft-light;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(180deg, rgba(20,14,10,0.16), rgba(6,4,3,0.34)),
+        radial-gradient(circle at top, rgba(255, 226, 188, 0.05), transparent 30%);
+      backdrop-filter: blur(1.2px);
+    }
+
+    a, button, input, textarea {
+      transition: color var(--transition-interactive), background var(--transition-interactive), border-color var(--transition-interactive), transform var(--transition-interactive), box-shadow var(--transition-interactive), opacity var(--transition-interactive);
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img, canvas, svg { display: block; max-width: 100%; }
+    button, input, textarea { font: inherit; color: inherit; }
+
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: var(--space-4);
+      background: #fff;
+      color: #000;
+      padding: var(--space-3) var(--space-4);
+      z-index: 100;
+      border-radius: var(--radius-full);
+    }
+    .skip-link:focus { left: var(--space-4); }
+
+    .ambient-room {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -1;
+      overflow: hidden;
+    }
+    .ambient-room .glow {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(50px);
+      opacity: 0.28;
+      animation: driftGlow 16s ease-in-out infinite;
+    }
+    .glow-1 { width: 22rem; height: 22rem; top: 6%; left: 4%; background: rgba(183, 107, 55, 0.26); }
+    .glow-2 { width: 16rem; height: 16rem; top: 12%; right: 8%; background: rgba(231, 188, 131, 0.18); animation-delay: -4s; }
+    .glow-3 { width: 20rem; height: 20rem; bottom: 10%; left: 20%; background: rgba(121, 67, 43, 0.18); animation-delay: -8s; }
+
+    .wall-art, .booth-shadow, .table-haze {
+      position: absolute;
+      pointer-events: none;
+      opacity: 0.28;
+    }
+    .wall-art {
+      width: 18rem;
+      height: 11rem;
+      top: 16%;
+      right: 7%;
+      border: 1px solid rgba(245, 218, 184, 0.07);
+      border-radius: var(--radius-lg);
+      background:
+        linear-gradient(145deg, rgba(109, 55, 41, 0.34), rgba(28, 22, 18, 0.16)),
+        radial-gradient(circle at 25% 30%, rgba(241, 189, 133, 0.18), transparent 30%),
+        radial-gradient(circle at 66% 64%, rgba(140, 78, 47, 0.2), transparent 24%);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.02), 0 18px 50px rgba(0,0,0,0.22);
+      transform: rotate(-4deg);
+    }
+    .booth-shadow {
+      left: -5%;
+      bottom: 12%;
+      width: 44rem;
+      height: 15rem;
+      border-radius: 50%;
+      background: radial-gradient(circle at center, rgba(73, 39, 25, 0.46), transparent 70%);
+      filter: blur(22px);
+    }
+    .table-haze {
+      right: 10%;
+      bottom: 8%;
+      width: 30rem;
+      height: 10rem;
+      border-radius: 50%;
+      background: radial-gradient(circle at center, rgba(90, 50, 27, 0.28), transparent 70%);
+      filter: blur(18px);
+    }
+    .window-light {
+      position: absolute;
+      top: -2%;
+      left: 3%;
+      width: 26rem;
+      height: 34rem;
+      opacity: 0.42;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,0.16) 0 3px, transparent 3px 48%),
+        linear-gradient(180deg, rgba(255,255,255,0.14) 0 3px, transparent 3px 48%),
+        linear-gradient(135deg, rgba(255, 239, 214, 0.22), rgba(255, 208, 149, 0.04));
+      border-radius: 1rem;
+      filter: blur(10px);
+      transform: perspective(900px) rotateY(18deg) rotateX(3deg);
+      box-shadow: 0 0 120px rgba(255, 212, 158, 0.12);
+    }
+
+    .page-shell {
+      width: min(calc(100% - 2rem), var(--content-wide));
+      margin: 0 auto;
+      padding: var(--space-6) 0 var(--space-24);
+      position: relative;
+    }
+
+    .masthead {
+      position: sticky;
+      top: var(--space-4);
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-4);
+      padding: var(--space-4) var(--space-5);
+      margin-bottom: var(--space-12);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-full);
+      background: rgba(27, 21, 17, 0.58);
+      backdrop-filter: blur(18px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-3);
+      min-height: 44px;
+    }
+
+    .brand-mark {
+      width: 2.5rem;
+      height: 2.5rem;
+      color: var(--color-primary);
+      flex: 0 0 auto;
+    }
+
+    .brand-text strong {
+      display: block;
+      font-size: var(--text-sm);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .brand-text span {
+      display: block;
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: var(--space-4);
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      position: relative;
+    }
+    .nav-links a:hover,
+    .nav-links a:focus-visible { color: var(--color-text); }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-3);
+      align-items: center;
+    }
+
+    .button {
+      min-height: 44px;
+      padding: 0.8rem 1.1rem;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--color-border);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-2);
+      font-size: var(--text-sm);
+      background: rgba(255,255,255,0.02);
+      box-shadow: var(--shadow-sm);
+    }
+    .button:hover,
+    .button:focus-visible {
+      transform: translateY(-2px);
+      border-color: rgba(210,165,109,0.35);
+    }
+    .button-primary {
+      background: linear-gradient(180deg, rgba(215,172,119,0.18), rgba(120,78,43,0.14));
+      color: var(--color-text);
+      border-color: rgba(210,165,109,0.32);
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      gap: clamp(var(--space-8), 5vw, var(--space-16));
+    }
+
+    .section {
+      position: relative;
+      padding: clamp(var(--space-6), 3.4vw, var(--space-12));
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--color-border);
+      background:
+        linear-gradient(180deg, rgba(56, 42, 34, 0.62), rgba(24, 19, 16, 0.7)),
+        rgba(27, 21, 17, 0.56);
+      backdrop-filter: blur(14px);
+      box-shadow: var(--shadow-md);
+      transform: translate3d(0, 0, 0);
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .section::before {
+      content: "";
+      position: absolute;
+      inset: 1px;
+      border-radius: calc(var(--radius-xl) - 2px);
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0));
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .section::after {
+      content: "";
+      position: absolute;
+      left: 8%;
+      right: 8%;
+      bottom: -3rem;
+      height: 5rem;
+      border-radius: 50%;
+      background: radial-gradient(circle at center, rgba(0,0,0,0.32), transparent 70%);
+      filter: blur(10px);
+      opacity: 0.44;
+      pointer-events: none;
+      z-index: -2;
+    }
+
+    .float-card {
+      animation: floatSection 8s ease-in-out infinite;
+      will-change: transform;
+    }
+    .float-card.delay-1 { animation-delay: -1.4s; }
+    .float-card.delay-2 { animation-delay: -3.1s; }
+    .float-card.delay-3 { animation-delay: -5.4s; }
+
+    .eyebrow {
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--color-primary);
+      margin-bottom: var(--space-4);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: clamp(var(--space-6), 4vw, var(--space-10));
+      min-height: 72vh;
+      align-items: center;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: var(--text-2xl);
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+      max-width: 12ch;
+    }
+
+    .hero h1 .accent { color: var(--color-primary); }
+
+    .lede {
+      margin-top: var(--space-5);
+      color: var(--color-text-muted);
+      max-width: 58ch;
+    }
+
+    .confessional {
+      margin-top: var(--space-6);
+      padding: var(--space-5);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(246, 232, 214, 0.08);
+      background: rgba(17, 13, 10, 0.42);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.02);
+    }
+
+    .confessional .label,
+    .reply .label {
+      display: inline-block;
+      margin-bottom: var(--space-2);
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--color-primary);
+    }
+
+    .reply {
+      margin-top: var(--space-4);
+      padding-left: var(--space-5);
+      border-left: 1px solid rgba(210,165,109,0.35);
+      color: var(--color-text-muted);
+      max-width: 54ch;
+    }
+
+    .hero-side {
+      display: grid;
+      gap: var(--space-4);
+    }
+
+    .canvas-shell {
+      position: relative;
+      min-height: 25rem;
+      border-radius: calc(var(--radius-xl) - var(--space-2));
+      border: 1px solid rgba(246, 232, 214, 0.08);
+      background:
+        radial-gradient(circle at 50% 0%, rgba(255, 214, 167, 0.08), transparent 42%),
+        linear-gradient(180deg, rgba(61, 42, 31, 0.54), rgba(15, 11, 9, 0.62));
+      overflow: hidden;
+    }
+
+    #coffeeCanvas {
+      width: 100%;
+      height: 100%;
+      min-height: 25rem;
+    }
+
+    .canvas-note {
+      position: absolute;
+      left: var(--space-4);
+      bottom: var(--space-4);
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+      padding: var(--space-2) var(--space-3);
+      border-radius: var(--radius-full);
+      background: rgba(15, 11, 9, 0.5);
+      border: 1px solid rgba(246, 232, 214, 0.08);
+      backdrop-filter: blur(10px);
+    }
+
+    .fact-grid,
+    .genre-grid,
+    .quote-grid,
+    .faq-grid,
+    .contact-grid {
+      display: grid;
+      gap: var(--space-4);
+    }
+
+    .fact-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .fact,
+    .panel,
+    .quote,
+    .faq,
+    .contact-panel {
+      padding: var(--space-5);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(246, 232, 214, 0.08);
+      background: rgba(18, 14, 11, 0.42);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .fact strong,
+    .panel h3,
+    .faq strong,
+    .contact-panel h3 {
+      display: block;
+      margin-bottom: var(--space-2);
+      font-size: var(--text-sm);
+      color: var(--color-text);
+    }
+
+    .section-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: end;
+      justify-content: space-between;
+      gap: var(--space-4);
+      margin-bottom: var(--space-6);
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: var(--text-xl);
+      line-height: 1;
+    }
+
+    .section-head p {
+      color: var(--color-text-muted);
+      font-size: var(--text-sm);
+      max-width: 38ch;
+      margin: 0;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: var(--space-5);
+    }
+
+    .panel p,
+    .fact p,
+    .faq p,
+    .contact-panel p,
+    .quote p,
+    .genre-item p { color: var(--color-text-muted); }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      margin-top: var(--space-4);
+    }
+
+    .chip {
+      padding: 0.42rem 0.72rem;
+      border-radius: var(--radius-full);
+      font-size: var(--text-xs);
+      letter-spacing: 0.04em;
+      color: var(--color-primary);
+      background: var(--color-primary-highlight);
+      border: 1px solid rgba(210,165,109,0.16);
+    }
+
+    .genre-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .genre-item {
+      padding: var(--space-5);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(246, 232, 214, 0.08);
+      background: rgba(17, 13, 10, 0.34);
+      min-height: 100%;
+    }
+    .genre-item h3 {
+      margin: 0 0 var(--space-2);
+      font-size: var(--text-lg);
+      line-height: 1.1;
+      font-family: var(--font-display);
+    }
+
+    .iam-list {
+      display: grid;
+      gap: var(--space-3);
+    }
+    .iam-item {
+      padding: var(--space-4);
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(246, 232, 214, 0.08);
+      background: rgba(17, 13, 10, 0.28);
+    }
+    .iam-item strong { display:block; margin-bottom: var(--space-1); }
+
+    .quote-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .quote p { margin: 0 0 var(--space-3); font-style: italic; }
+    .quote cite {
+      font-style: normal;
+      color: var(--color-text);
+      font-size: var(--text-sm);
+    }
+    .quote .role {
+      display: block;
+      font-size: var(--text-xs);
+      color: var(--color-text-faint);
+      margin-top: var(--space-1);
+    }
+
+    .faq-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .contact-grid { grid-template-columns: 0.9fr 1.1fr; }
+
+    form {
+      display: grid;
+      gap: var(--space-4);
+    }
+
+    label {
+      display: grid;
+      gap: var(--space-2);
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+    }
+
+    input, textarea {
+      width: 100%;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(246, 232, 214, 0.1);
+      background: rgba(11, 8, 6, 0.5);
+      padding: 0.9rem 1rem;
+      min-height: 44px;
+    }
+    textarea { min-height: 9rem; resize: vertical; }
+    input:focus-visible, textarea:focus-visible, .button:focus-visible, a:focus-visible {
+      outline: 2px solid rgba(210,165,109,0.8);
+      outline-offset: 3px;
+    }
+
+    footer {
+      margin-top: var(--space-16);
+      padding: var(--space-6) 0;
+      border-top: 1px solid var(--color-divider);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: var(--space-4);
+      color: var(--color-text-faint);
+      font-size: var(--text-xs);
+    }
+
+    .muted-link { color: var(--color-primary); }
+
+    [data-reveal] {
+      opacity: 0.72;
+      filter: blur(5px);
+      transform: translateY(24px) scale(0.992);
+      transition: opacity 800ms cubic-bezier(0.16,1,0.3,1), transform 800ms cubic-bezier(0.16,1,0.3,1), filter 800ms cubic-bezier(0.16,1,0.3,1);
+    }
+    [data-reveal].is-visible {
+      opacity: 1;
+      filter: blur(0);
+      transform: translateY(0) scale(1);
+    }
+    .in-focus {
+      opacity: 1 !important;
+      filter: blur(0) !important;
+    }
+    .out-of-focus {
+      opacity: 0.58;
+      filter: blur(5px);
+    }
+
+    @keyframes floatSection {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes driftGlow {
+      0%, 100% { transform: translate3d(0,0,0) scale(1); }
+      50% { transform: translate3d(0,-12px,0) scale(1.04); }
+    }
+
+    @media (max-width: 1080px) {
+      .hero,
+      .split,
+      .contact-grid { grid-template-columns: 1fr; }
+      .genre-grid,
+      .quote-grid,
+      .faq-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 760px) {
+      .page-shell { width: min(calc(100% - 1rem), var(--content-default)); }
+      .masthead {
+        border-radius: var(--radius-lg);
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .nav-links { justify-content: space-between; }
+      .button-row { width: 100%; }
+      .button-row .button { flex: 1 1 auto; }
+      .fact-grid,
+      .genre-grid,
+      .quote-grid,
+      .faq-grid { grid-template-columns: 1fr; }
+      .hero { min-height: auto; }
+      .canvas-shell, #coffeeCanvas { min-height: 20rem; }
+      .wall-art { opacity: 0.16; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      [data-reveal] { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <div class="ambient-room" aria-hidden="true">
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    <div class="glow glow-3"></div>
+    <div class="wall-art"></div>
+    <div class="booth-shadow"></div>
+    <div class="table-haze"></div>
+  </div>
+
+  <div class="page-shell">
+    <header class="masthead" aria-label="Primary">
+      <a class="brand" href="#top" aria-label="Tobe Garrett home">
+        <svg class="brand-mark" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M13 42C13 27.6406 24.6406 16 39 16H43C46.866 16 50 19.134 50 23V36C50 39.866 46.866 43 43 43H13V42Z" stroke="currentColor" stroke-width="2.5"/>
+          <path d="M50 25H54C57.3137 25 60 27.6863 60 31C60 34.3137 57.3137 37 54 37H50" stroke="currentColor" stroke-width="2.5"/>
+          <path d="M18 48H48" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M25 12C25 12 24 8 27 5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M35 12C35 12 34 8 37 5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+        <span class="brand-text">
+          <strong>Tobe Garrett</strong>
+          <span>Stories that pull people in</span>
+        </span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#books">Books</a>
+        <a href="#series">I Am Series</a>
+        <a href="#about">About</a>
+        <a href="#voices">Voices</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="button-row">
+        <a class="button button-primary" href="https://www.amazon.com/stores/author/B0DYFYB2Y9/allbooks?_encoding=UTF8&ref_=aufs_ap_ahdr_dsk_ab" target="_blank" rel="noopener noreferrer">Browse Tobe on Amazon</a>
+        <a class="button" href="https://www.amazon.com/stores/Tobias-Garrett/author/B07X6NLYTZ/allbooks?ccs_id=0a32b85b-0c56-464e-be46-b60ed6ef5c16" target="_blank" rel="noopener noreferrer">Browse Tobias titles</a>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="section hero float-card delay-1" data-reveal>
+        <div>
+          <div class="eyebrow">Tobe Garrett</div>
+          <h1>If a reader lands here wondering what kind of author he is, <span class="accent">they should know inside a few seconds.</span></h1>
+          <p class="lede">
+            Tobe Garrett writes for readers who want more than surface level entertainment. His catalog spans science fiction, historical fiction, fantasy, adventure, practical how-to guides, and the “I Am” series, with each title built to pull the reader inside the subject instead of leaving them outside looking in.
+          </p>
+
+          <div class="confessional">
+            <span class="label">Why readers stay</span>
+            <p>He does not write to impress people with how much he knows. He writes so the reader can see, feel, and understand something they did not fully grasp before they opened the book.</p>
+          </div>
+
+          <div class="reply">
+            <span class="label">What that means</span>
+            <p>
+              When someone starts one of these books, they are not just getting information or plot. They are stepping into a point of view. That is what makes the story move. That is what makes the lesson stick.
+            </p>
+          </div>
+
+          <div class="button-row" style="margin-top: var(--space-6);">
+            <a class="button button-primary" href="https://www.amazon.com/stores/author/B0DYFYB2Y9/allbooks?_encoding=UTF8&ref_=aufs_ap_ahdr_dsk_ab" target="_blank" rel="noopener noreferrer">Start with Tobe</a>
+            <a class="button" href="mailto:Tobephoto@gmail.com">Send a note</a>
+          </div>
+        </div>
+
+        <div class="hero-side">
+          <div class="canvas-shell" aria-hidden="true">
+            <canvas id="coffeeCanvas"></canvas>
+            <div class="canvas-note">Morning light, a book, and space to look closer.</div>
+          </div>
+
+          <div class="fact-grid">
+            <article class="fact">
+              <strong>55+ original titles</strong>
+              <p>Across science fiction, historical fiction, fantasy, adventure, informative books, and how-to guides.</p>
+            </article>
+            <article class="fact">
+              <strong>Two author shelves</strong>
+              <p>Most books live under Tobe, while the historical titles can be found under Tobias Garrett.</p>
+            </article>
+            <article class="fact">
+              <strong>Paperback and e-book</strong>
+              <p>Readers can choose the format that fits the moment — shelf copy or instant download.</p>
+            </article>
+            <article class="fact">
+              <strong>Experience over posture</strong>
+              <p>Each book aims to feel like perspective shared by someone who has seen a little of everything.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="books" class="section float-card delay-2" data-reveal>
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">The catalog</div>
+            <h2>The range is broad, which gives readers more ways to enter the work.</h2>
+          </div>
+          <p>That matters because different readers come in looking for different outcomes, and the catalog makes room for all of them.</p>
+        </div>
+
+        <div class="split">
+          <article class="panel">
+            <h3>Explore the full catalog</h3>
+            <p>
+              Tobe Garrett’s collection spans science fiction, historical fiction, fantasy, adventure, “I Am” books, and how-to guides. Most titles are listed under Tobe Garrett. Readers looking for the historical titles should use the Tobias Garrett link. All of these titles are original content.
+            </p>
+            <div class="chips">
+              <span class="chip">Science fiction</span>
+              <span class="chip">Historical fiction</span>
+              <span class="chip">Fantasy</span>
+              <span class="chip">Adventure</span>
+              <span class="chip">How-to guides</span>
+              <span class="chip">“I Am” series</span>
+            </div>
+            <div class="button-row" style="margin-top: var(--space-6);">
+              <a class="button button-primary" href="https://www.amazon.com/stores/Tobe-Garrett/author/B0DYFYB2Y9?ref=ap_rdr&shoppingPortalEnabled=true&ccs_id=36385333-db47-4c3c-b134-47abcd089765" target="_blank" rel="noopener noreferrer">Browse Tobe books</a>
+              <a class="button" href="https://www.amazon.com/stores/Tobias-Garrett/author/B07X6NLYTZ/allbooks?ccs_id=0a32b85b-0c56-464e-be46-b60ed6ef5c16" target="_blank" rel="noopener noreferrer">Browse Tobias books</a>
+            </div>
+          </article>
+
+          <div class="genre-grid">
+            <article class="genre-item">
+              <h3>Immersive worlds</h3>
+              <p>Science fiction, fantasy, and adventure stories that transport readers to new possibilities.</p>
+            </article>
+            <article class="genre-item">
+              <h3>Real stories and guides</h3>
+              <p>Historical fiction grounded in real events and practical how-to books that teach something useful.</p>
+            </article>
+            <article class="genre-item">
+              <h3>Read your way</h3>
+              <p>Paperback or e-book, immediate download or physical copy — a format for every reader’s habit.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="series" class="section float-card delay-3" data-reveal>
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">The “I Am” series</div>
+            <h2>This is where the positioning separates him from a lot of other authors.</h2>
+          </div>
+          <p>Instead of describing the subject from the outside, these books let the subject tell the story in first person.</p>
+        </div>
+
+        <div class="split">
+          <article class="panel">
+            <h3>What makes the series different</h3>
+            <p>
+              The “I Am” series gives voice to cities, states, places, people, and symbols that shape the world. Each title is written from a first-person perspective, which turns history into something personal, engaging, and easier to remember.
+            </p>
+            <p>
+              For the reader, that changes the experience from reading about the subject to hearing from it.
+            </p>
+            <a class="button button-primary" href="https://www.amazon.com/dp/B0DYF7VZ37?binding=kindle_edition&ref_=ast_author_bsi" target="_blank" rel="noopener noreferrer">Explore the series</a>
+          </article>
+
+          <div class="iam-list">
+            <article class="iam-item"><strong>I Am the United States Army</strong><span>Discipline. Sacrifice. Brotherhood. Step inside the voice of those who serve.</span></article>
+            <article class="iam-item"><strong>I Am a Wild Hog</strong><span>Raw instinct. Untamed survival. Life with no rules.</span></article>
+            <article class="iam-item"><strong>I Am a Time Traveler</strong><span>Past. Present. Future. All at once.</span></article>
+            <article class="iam-item"><strong>I Am Gold</strong><span>Power, wealth, and obsession told by the element that shaped empires.</span></article>
+            <article class="iam-item"><strong>I Am Caesar</strong><span>Ambition, betrayal, and empire from within.</span></article>
+            <article class="iam-item"><strong>I Am the Great Wall of China</strong><span>A world wonder remembering centuries.</span></article>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section float-card delay-1" data-reveal>
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">About the author</div>
+            <h2>He writes with range, but the thread running through the work is clarity.</h2>
+          </div>
+          <p>That is important when someone is deciding whether this is an author they want to spend time with.</p>
+        </div>
+
+        <div class="split">
+          <article class="panel">
+            <h3>Meet Tobe Garrett</h3>
+            <p>
+              Tobe Garrett is an independent author based in Austin, Texas, with 55+ titles spanning science fiction, historical fiction, fantasy, adventure, and practical how-to guides. The throughline is careful research, thoughtful storytelling, and practical knowledge that connects with readers.
+            </p>
+            <p>
+              The strongest way to present him is as someone who knows how to take a big subject and make it readable, relatable, and worth finishing.
+            </p>
+          </article>
+
+          <article class="panel">
+            <h3>How each book comes to life</h3>
+            <p><strong>Research &amp; planning:</strong> digging deep into each topic or imagined world before the draft begins.</p>
+            <p><strong>Drafting &amp; revising:</strong> shaping each manuscript through multiple rounds to sharpen clarity, pacing, and emotional depth.</p>
+            <p><strong>Reader respect:</strong> whether fiction or nonfiction, the work aims to reward the reader’s time.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="voices" class="section float-card delay-2" data-reveal>
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Reader response</div>
+            <h2>The feedback points to the same conclusion from different angles.</h2>
+          </div>
+          <p>Readers keep pointing to world-building, practical clarity, historical detail, pacing, and range across genres.</p>
+        </div>
+
+        <div class="quote-grid">
+          <article class="quote">
+            <p>“The world-building is intricate, and the characters felt so real I couldn't put it down.”</p>
+            <cite>Jennifer Chen<span class="role">Science Fiction Reader</span></cite>
+          </article>
+          <article class="quote">
+            <p>“Each fantasy title delivers imaginative storytelling with compelling plot twists.”</p>
+            <cite>Tim Huy<span class="role">Fantasy Book Club Member</span></cite>
+          </article>
+          <article class="quote">
+            <p>“The how-to guides are practical, well-organized, and actually easy to follow.”</p>
+            <cite>Lisa Fuller<span class="role">How-To Reader</span></cite>
+          </article>
+          <article class="quote">
+            <p>“The pace is perfect, and every chapter left me wanting more.”</p>
+            <cite>David Okafor<span class="role">Adventure Genre Fan</span></cite>
+          </article>
+          <article class="quote">
+            <p>“Historical fiction that brings real periods to life with authentic detail.”</p>
+            <cite>Rebecca Walsh<span class="role">Historical Fiction Reader</span></cite>
+          </article>
+          <article class="quote">
+            <p>“There’s genuinely something for every reader across the catalog.”</p>
+            <cite>Alex Martinez<span class="role">Multi-Genre Reader</span></cite>
+          </article>
+        </div>
+      </section>
+
+      <section class="section float-card delay-3" data-reveal>
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Questions readers ask</div>
+            <h2>Most of the buying questions are straightforward.</h2>
+          </div>
+          <p>That helps remove friction for people who are interested and just need a clear next step.</p>
+        </div>
+
+        <div class="faq-grid">
+          <article class="faq">
+            <strong>Where can I buy the books?</strong>
+            <p>All titles are available on Amazon through the Tobe Garrett and Tobias Garrett author pages.</p>
+          </article>
+          <article class="faq">
+            <strong>What genres does he write in?</strong>
+            <p>Science fiction, historical fiction, fantasy, adventure, practical guides, and the “I Am” series.</p>
+          </article>
+          <article class="faq">
+            <strong>Paperback or e-book?</strong>
+            <p>Both formats are available, which keeps the storefront simple and accessible.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="section float-card delay-1" data-reveal>
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Contact</div>
+            <h2>When someone wants to reach out, the next step should feel simple.</h2>
+          </div>
+          <p>The source material says Tobe Garrett responds personally to messages and uses contact details only to answer inquiries.</p>
+        </div>
+
+        <div class="contact-grid">
+          <article class="contact-panel">
+            <h3>Reach Tobe Garrett directly</h3>
+            <p>Email to discuss favorite titles, ask about new releases, or explore collaboration opportunities.</p>
+            <p><a class="muted-link" href="mailto:Tobephoto@gmail.com">Tobephoto@gmail.com</a></p>
+            <p>Austin, Texas</p>
+            <p style="color: var(--color-text-faint);">When someone reaches out, the message is used only to respond and is not shared with third parties.</p>
+          </article>
+
+          <article class="contact-panel">
+            <h3>Leave a message</h3>
+            <form action="https://tobegarrett.com/contact" method="post">
+              <label>
+                <span>Name</span>
+                <input type="text" name="name" placeholder="Your name" />
+              </label>
+              <label>
+                <span>Email</span>
+                <input type="email" name="email" placeholder="you@example.com" />
+              </label>
+              <label>
+                <span>Message</span>
+                <textarea name="message" placeholder="What would you like to ask, say, or share?"></textarea>
+              </label>
+              <button class="button button-primary" type="submit">Send message</button>
+            </form>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>© 2026 Tobe Garrett. All rights reserved.</span>
+      <span>
+        <a class="muted-link" href="https://tobegarrett.com/#privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+        ·
+        <a class="muted-link" href="https://tobegarrett.com/contact" target="_blank" rel="noopener noreferrer">Terms of Service</a>
+      </span>
+    </footer>
+  </div>
+
+  <script src="https://unpkg.com/three@0.161.0/build/three.min.js" defer></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const revealItems = document.querySelectorAll('[data-reveal]');
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!reduceMotion) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) entry.target.classList.add('is-visible');
+          });
+        }, { threshold: 0.12 });
+        revealItems.forEach(item => observer.observe(item));
+      } else {
+        revealItems.forEach(item => item.classList.add('is-visible'));
+      }
+
+      
+      const sections = Array.from(document.querySelectorAll('main .section'));
+      const focusObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.intersectionRatio >= 0.72) {
+            sections.forEach((section) => section.classList.add('out-of-focus'));
+            entry.target.classList.remove('out-of-focus');
+            entry.target.classList.add('in-focus');
+          } else if (!entry.isIntersecting) {
+            entry.target.classList.remove('in-focus');
+          }
+        });
+      }, { threshold: [0.15, 0.45, 0.72, 0.95] });
+      sections.forEach((section, index) => {
+        if (index !== 0) section.classList.add('out-of-focus');
+        focusObserver.observe(section);
+      });
+
+      const canvas = document.getElementById('coffeeCanvas');
+      if (!canvas || !window.THREE || reduceMotion) return;
+
+      const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.8));
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(38, 1, 0.1, 100);
+      camera.position.set(0, 1.7, 7.5);
+
+      const ambient = new THREE.AmbientLight(0xf5d7b4, 1.15);
+      scene.add(ambient);
+
+      const warmLight = new THREE.PointLight(0xe1a96f, 2.1, 30, 1.8);
+      warmLight.position.set(-3.8, 3.2, 1.8);
+      scene.add(warmLight);
+
+      const rim = new THREE.PointLight(0x8c4f30, 1.1, 20, 2);
+      rim.position.set(2.5, 1.2, -1.6);
+      scene.add(rim);
+
+      const group = new THREE.Group();
+      scene.add(group);
+
+      const floor = new THREE.Mesh(
+        new THREE.PlaneGeometry(11, 11),
+        new THREE.MeshStandardMaterial({ color: 0x624736, roughness: 0.95 })
+      );
+      floor.rotation.x = -Math.PI / 2;
+      floor.position.y = -1.45;
+      group.add(floor);
+
+      const wall = new THREE.Mesh(
+        new THREE.PlaneGeometry(10, 6),
+        new THREE.MeshStandardMaterial({ color: 0x2f231b, roughness: 0.98, side: THREE.DoubleSide })
+      );
+      wall.position.set(0, 1.2, -3.2);
+      group.add(wall);
+
+      const windowFrame = new THREE.Mesh(
+        new THREE.BoxGeometry(2.5, 2.8, 0.06),
+        new THREE.MeshStandardMaterial({ color: 0x6a4b37, roughness: 0.9 })
+      );
+      windowFrame.position.set(-2.2, 1.5, -3.05);
+      group.add(windowFrame);
+
+      const windowGlass = new THREE.Mesh(
+        new THREE.PlaneGeometry(2.14, 2.42),
+        new THREE.MeshStandardMaterial({ color: 0xe9dfd0, transparent: true, opacity: 0.24, emissive: 0xffe1b4, emissiveIntensity: 0.4, side: THREE.DoubleSide })
+      );
+      windowGlass.position.set(-2.2, 1.5, -3.0);
+      group.add(windowGlass);
+
+      const lightBeam = new THREE.Mesh(
+        new THREE.PlaneGeometry(3.8, 5.8),
+        new THREE.MeshBasicMaterial({ color: 0xffddb1, transparent: true, opacity: 0.08, side: THREE.DoubleSide })
+      );
+      lightBeam.position.set(-1.25, 0.35, -0.8);
+      lightBeam.rotation.z = 0.32;
+      lightBeam.rotation.y = -0.12;
+      group.add(lightBeam);
+
+      const bookCover = new THREE.Mesh(
+        new THREE.BoxGeometry(2.7, 0.18, 2.05),
+        new THREE.MeshStandardMaterial({ color: 0x6a3d2c, roughness: 0.84 })
+      );
+      bookCover.position.set(1.3, -1.0, -0.15);
+      bookCover.rotation.y = -0.42;
+      bookCover.rotation.z = -0.08;
+      group.add(bookCover);
+
+      const pageBlock = new THREE.Mesh(
+        new THREE.BoxGeometry(2.42, 0.11, 1.8),
+        new THREE.MeshStandardMaterial({ color: 0xe8dcc8, roughness: 0.93 })
+      );
+      pageBlock.position.set(1.3, -0.88, -0.12);
+      pageBlock.rotation.y = -0.42;
+      pageBlock.rotation.z = -0.08;
+      group.add(pageBlock);
+
+      const artFrame = new THREE.Mesh(
+        new THREE.PlaneGeometry(2.1, 1.5),
+        new THREE.MeshStandardMaterial({ color: 0x5c382c, roughness: 0.9, side: THREE.DoubleSide })
+      );
+      artFrame.position.set(2.4, 1.4, -2.3);
+      artFrame.rotation.y = -0.32;
+      scene.add(artFrame);
+
+      const artPanel = new THREE.Mesh(
+        new THREE.PlaneGeometry(1.74, 1.14),
+        new THREE.MeshStandardMaterial({ color: 0xb77454, roughness: 0.9, emissive: 0x3a1d12, emissiveIntensity: 0.25, side: THREE.DoubleSide })
+      );
+      artPanel.position.set(2.4, 1.4, -2.24);
+      artPanel.rotation.y = -0.32;
+      scene.add(artPanel);
+
+      const dustMaterial = new THREE.MeshBasicMaterial({ color: 0xf4e8d6, transparent: true, opacity: 0.16, side: THREE.DoubleSide });
+      const dust = [];
+      for (let i = 0; i < 7; i++) {
+        const mote = new THREE.Mesh(new THREE.PlaneGeometry(0.08, 0.08), dustMaterial.clone());
+        mote.position.set(-1.9 + i * 0.55, -0.2 + (i % 3) * 0.7, -0.4 + (i % 2) * 0.18);
+        group.add(mote);
+        dust.push(mote);
+      }
+
+      const resize = () => {
+        const { clientWidth, clientHeight } = canvas;
+        renderer.setSize(clientWidth, clientHeight, false);
+        camera.aspect = clientWidth / clientHeight;
+        camera.updateProjectionMatrix();
+      };
+      resize();
+      window.addEventListener('resize', resize);
+
+      const clock = new THREE.Clock();
+      const animate = () => {
+        const t = clock.getElapsedTime();
+        group.position.y = Math.sin(t * 0.5) * 0.06;
+        group.rotation.y = Math.sin(t * 0.22) * 0.04 - 0.05;
+        warmLight.intensity = 2.0 + Math.sin(t * 0.55) * 0.08;
+        lightBeam.material.opacity = 0.06 + (Math.sin(t * 0.5) + 1) * 0.015;
+        dust.forEach((mote, i) => {
+          mote.position.y += Math.sin(t * 0.45 + i) * 0.0009;
+          mote.position.x += Math.cos(t * 0.32 + i) * 0.0007;
+          mote.material.opacity = 0.07 + (Math.sin(t * 0.8 + i) + 1) * 0.03;
+          mote.rotation.z = Math.sin(t * 0.6 + i) * 0.2;
+        });
+        renderer.render(scene, camera);
+        requestAnimationFrame(animate);
+      };
+      animate();
+    });
+  </script>
+</body>
+</html>
